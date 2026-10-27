@@ -1,0 +1,32 @@
+{
+  "id": "CatalystFilm",
+  "slug": "catalyst-film",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "cuts": [
+    0,
+    4.5,
+    10
+  ],
+  "scenes": [
+    {
+      "name": "1 \u00b7 Hook"
+    },
+    {
+      "name": "2 \u00b7 CTA"
+    }
+  ],
+  "voice": "af_heart",
+  "speed": 1.05,
+  "vo": [
+    {
+      "at": 0.4,
+      "text": "Replace this with the first line of your script."
+    },
+    {
+      "at": 4.8,
+      "text": "Catalyst by Zoho."
+    }
+  ]
+}

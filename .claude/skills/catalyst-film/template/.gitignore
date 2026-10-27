@@ -1,0 +1,12 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+.cache/
+# safety net — the pipeline writes audio to <project>/outputs/<film>/build/, never here
+public/audio
+audio-src/vo
+out/.video/

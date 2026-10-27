@@ -1,0 +1,5 @@
+{
+  "_doc": "Named film events, read by BOTH src/cues.ts (visuals) and audio-src/make_sound.py (SFX), so a time is written once. Value = seconds, or \"vo<N>:<word>[#k][+/-sec]\" to pin to a VO word onset (k = which occurrence, 0-based).",
+  "hook.title": "vo1:first+0.05",
+  "cta.button": 6.2
+}

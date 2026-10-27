@@ -1,0 +1,15 @@
+{
+  "_doc": "Pinned toolchain so every machine renders, voices and mixes the same way \u2014 the goal is the same style for new films, not byte-identical copies of old ones. setup.sh installs it; doctor.sh checks it.",
+  "reference_platform": "macOS arm64 (Apple Silicon)",
+  "python": "3.11",
+  "pip_lock": "requirements.lock",
+  "node": ">=20 (reference 26.4.0)",
+  "remotion": "4.0.539 (package-lock.json per film; bundles its own Chrome Headless Shell + FFmpeg for picture and encode)",
+  "espeak_ng": "1.52.0",
+  "kokoro": {
+    "repo": "hexgrad/Kokoro-82M",
+    "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+    "seed": 1234
+  },
+  "system_ffmpeg": "optional \u2014 review contact sheets only; never used for deliverables"
+}

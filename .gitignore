@@ -1,0 +1,18 @@
+# ── outputs/ ships EMPTY (user rule): every film — brief, code, renders — is made fresh on the user's machine ──
+outputs/*
+!outputs/.gitkeep
+**/out/
+
+# ── Rebuilt from the lock files (npm ci · bin/setup.sh · scripts/film.py) ──
+node_modules/
+.cache/
+**/build/
+# safety net: generated audio never belongs next to code (the pipeline writes to outputs/<film>/build/)
+**/public/audio
+**/audio-src/vo
+
+# ── Local tooling ──
+.playwright-mcp/
+.DS_Store
+*.log
+**/film.lock.json
