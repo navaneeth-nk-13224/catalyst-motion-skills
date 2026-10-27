@@ -3,9 +3,10 @@
   python scripts/film.py check      word budget + slot overflow (fast gate; run after every script edit)
   python scripts/film.py vo         Kokoro VO → dur + word timestamps            (skipped if VO text/voice/speed unchanged)
   python scripts/film.py words      print every VO word with its film-clock time (for cues.json / scene constants)
-  python scripts/film.py sound      score + SFX (make_sound.py)                   (skipped if script/timeline/cues unchanged)
+  python scripts/film.py sound      score + SFX (make_sound.py + synth.py)                 (skipped if script/timeline/cues unchanged)
   python scripts/film.py mix        duck + loudnorm → outputs/<film>/build/audio/mix.wav      (skipped if inputs unchanged)
   python scripts/film.py stills     key stills + contact sheet → outputs/<film>/preview/  [frames…]  (skipped if no visual change)
+  python scripts/film.py look       <frame> [x y w h] → one small crop/downscale for review (build/review/look-*.png)
   python scripts/film.py render     the ONE deliverable: outputs/<film>/<slug>.mp4 (git-ignored)  (skipped if picture + mix unchanged)
   python scripts/film.py verify     delivery checks + compare every stage to film.lock.json (if present)
   python scripts/film.py lock       (optional, developer tool) checksum this build to confirm a refactor changed nothing — don't commit
@@ -70,7 +71,7 @@ def vo_key():  # what the voice depends on
 
 def sound_key():  # score + SFX depend on the script, the cue sheet, the cuts and the (deterministic) VO words
     t = tl()
-    return digest(ROOT / "audio-src/make_sound.py", ROOT / "src/cues.json", json.dumps(t["cuts"]), vo_key())
+    return digest(ROOT / "audio-src/synth.py", ROOT / "audio-src/make_sound.py", ROOT / "src/cues.json", json.dumps(t["cuts"]), vo_key())
 
 
 def mix_key():
@@ -103,6 +104,18 @@ def stage(name):
         cached("mix", mix_key(), lambda: sh("audio-src/mix.py", TL, py=True), [a / "mix.wav"])
     elif name == "stills":
         cached("stills", digest(visual_key(), ROOT / "scripts/stills.mjs", *frame_args()), lambda: sh("node", "scripts/stills.mjs", *frame_args()), [PREVIEW / "sheet.png"])
+    elif name == "look":  # one small review image (crop and/or downscale) instead of reading full-size stills
+        n = [int(a) for a in args[1:] if a.lstrip("-").isdigit()]
+        if not n:
+            sys.exit("usage: film.py look <frame> [x y w h]")
+        src = PREVIEW / f"f{n[0]:04d}.png"
+        if not src.exists():
+            sh("node", "scripts/stills.mjs", n[0])
+        crop = f"crop={n[3]}:{n[4]}:{n[1]}:{n[2]}," if len(n) == 5 else ""
+        out = BUILD / "review" / f"look-{n[0]}{'-' + '-'.join(map(str, n[1:])) if crop else ''}.png"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        sh("npx", "--no-install", "remotion", "ffmpeg", "-v", "error", "-y", "-i", src, "-vf", f"{crop}scale='min(1000,iw)':-2", out)
+        print(f"✓ {out.relative_to(PROJECT)}")
     elif name == "render":
         cached("render", digest(visual_key(), mix_key(), ROOT / "scripts/render.mjs"), lambda: sh("node", "scripts/render.mjs"), [OUTPUTS / f"{slug()}.mp4"])
     elif name == "verify":

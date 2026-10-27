@@ -64,6 +64,7 @@ The camera rules in `dna/style-dna.md` (no rotation, no perspective) still apply
 - **Occlusion:** a solid or glow may pass *behind* a headline. Nothing ever passes in front of text.
 - **Contrast floor:** text sits on ≥ 85% black. Use a vignette or a local radial mask, never a box behind the type.
 - **Safe area:** keep 96–120px margins. Giant type may bleed to the edges only in L4.
+- **Clear space (user rule):** text never touches or overlaps art. Keep ≥ 56px between any text and the real outline of a solid (all faces, including side/depth faces), a cable/trace/thread, a glow body or a UI card; ≥ 40px between separate text blocks; small labels (≤ 20px) ≥ 40px. Measure from the projected outline, never from an anchor point. If it doesn't fit, move the label to open space, put it inside the card it describes, or cut it.
 
 ## Choosing a layout for a beat
 | Beat | Good layouts |

@@ -105,8 +105,8 @@ def check_deliverable():
         "vo_measured": all(l.get("dur") for l in tl["vo"]),
         "vo_words": all(l.get("words") for l in tl["vo"]),
     }
-    ledger = ROOT / ".claude/skills/catalyst-motion/ledger.md"
-    extra["ledger_entry"] = ledger.exists() and f"{FILM_DIR.name}/`" in ledger.read_text()
+    ledgers = [ROOT / ".claude/skills/catalyst-motion" / n for n in ("ledger.md", "ledger-archive.md")]
+    extra["ledger_entry"] = any(l.exists() and f"{FILM_DIR.name}/`" in l.read_text() for l in ledgers)
     for k, ok in extra.items():
         print(f"  {'✓' if ok else '✗'} {k}" + ("" if ok or k != "ledger_entry" else "  ← append this film to catalyst-motion/ledger.md (pipeline step 11)"))
     fails += sum(1 for k, ok in extra.items() if not ok and k != "ledger_entry")

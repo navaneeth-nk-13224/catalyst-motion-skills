@@ -1,9 +1,10 @@
 # Catalyst Film Pipeline — run card
 
-The whole workflow on one page. **Read only what each stage lists.** Deep files are for when a gate fails or a
+**Start with `SKILL.md` (the film-start digest)** — it condenses this card and the rule files. This card is the full reference.
+**Read only what each stage lists.** Deep files are for when a gate fails or a
 choice needs detail.
 
-**Delivery rule:** each film ships **one file**, `out/<slug>.mp4`, the final film with the full mix. **No captions, ever** (user rule, 2026-10-27): no burned-in subtitles, no `.srt`. No music-only or alternate cuts unless the user asks for one for a specific film.
+**Delivery rule:** each film ships **one file**, `outputs/<film>/<slug>.mp4`, the final film with the full mix. **No captions, ever** (user rule, 2026-10-27): no burned-in subtitles, no `.srt`. No music-only or alternate cuts unless the user asks for one for a specific film.
 
 **Two standing rules:**
 - **Same style, not exact copies.** The goal is new films in the same style, not byte-identical re-renders of existing ones.
@@ -33,7 +34,7 @@ sh .claude/skills/catalyst-film/bin/setup.sh      # persistent venv ~/.catalyst-
 | 7 | **Show the user** | — | Present the script and storyboard | Approved (skip only if told "just make it") | — |
 | 8 | **Build** | `catalyst-motion` grammar files for the chosen verbs/layouts | Write `src/art.tsx` (new primitives) and `src/Film.tsx`. Use `cue()` / `word()` for every timing. `npx tsc --noEmit`, then `python scripts/film.py stills`. Look at `outputs/<film>/preview/sheet.png`, fix, repeat. | Sheet passes LEARNINGS §Stills checklist | Scenes |
 | 8b | **Key stills** (after stage 8 Build, before stage 9) | — | Render 7–8 stills of the most important moments: `python scripts/film.py stills <frames>` (writes `outputs/<film>/preview/`). Open them, wait. | **The user approves the stills.** No sound, mix or final render before that. | `outputs/<film>/preview/` |
-| 9 | **Sound** | `production/audio.md` §2–3 | Rewrite the `# ── music ──` / `# ── sfx ──` sections of `audio-src/make_sound.py` using `CUE()` / `WORD()`. Run `python scripts/film.py sound`, then `mix`. | Music follows the arc's music line. Breath-cut silence is real silence. | `outputs/<film>/build/audio/mix*.wav` |
+| 9 | **Sound** | `production/audio.md` §2–3 | Write `audio-src/make_sound.py` (score + SFX only; instruments come from `synth.py`) using `CUE()` / `WORD()`. Run `python scripts/film.py sound`, then `mix`. | Music follows the arc's music line. Breath-cut silence is real silence. | `outputs/<film>/build/audio/mix*.wav` |
 | 10 | **Render + verify** | `production/verify.md` | `python scripts/film.py render`, then `verify`. | `verify` ALL PASS (spec, duration, −14 ±0.5 LUFS, TP ≤ −1 dB, words, **single deliverable**, no captions) | **`outputs/<film>/<slug>.mp4` only** |
 | 11 | **Log + report** | — | Paste brief §7 into `catalyst-motion/ledger.md` **and** the film's openings, endings, mode, device and phrases into `catalyst-film/story/copy-ledger.md`; update both status tables. Fill brief §5–6. Open the MP4. | `verify` shows ✓ ledger_entry | Ledgers, final message |
 
@@ -70,5 +71,6 @@ sh .claude/skills/catalyst-film/bin/setup.sh      # persistent venv ~/.catalyst-
     bin/                       setup.sh · new-film.sh · requirements.txt
     template/                  Remotion project: timeline.json · cues.json/ts · Stage · iso/motion/theme kit
                                scripts/ film.py · timeline_tools.py · stills.mjs · render.mjs · verify.py
-                               audio-src/ kokoro_vo.py · make_sound.py · mix.py
+                               audio-src/ kokoro_vo.py · synth.py (library) · make_sound.py (score) · mix.py
+                               KIT.md (kit API) · src/kit.tsx (supporting helpers)
 ```

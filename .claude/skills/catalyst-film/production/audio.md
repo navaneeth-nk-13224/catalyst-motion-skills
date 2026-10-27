@@ -31,7 +31,7 @@ All audio is generated locally and is original. No stock music and no cloud TTS.
   | How | Groove: kick on 1 and 3, building to four-on-the-floor |
   | Payoff | A break, then the resolve chord, a bell and the tail |
 
-- The file is a **library at the top** (instrument functions) **plus film-specific sections**: `# ── music ──` and `# ── sfx ──`. Copy it and rewrite only those sections for each film.
+- **Two files:** `audio-src/synth.py` is the instrument library (identical for every film; don't edit or re-read it — the instrument list is in `template/KIT.md`). `audio-src/make_sound.py` is only this film's score and SFX: `from synth import *`, then `add(...)` / `chord(...)` calls, then `finish()`.
 
 ## 3. SFX — synced to the motion, in the same file
 | Motion | Sound |

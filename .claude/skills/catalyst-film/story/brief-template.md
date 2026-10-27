@@ -1,7 +1,7 @@
 # {{FOLDER}} — Film Brief (`{{SLUG}}`)
 
 Made with the `catalyst-film` pipeline. Style comes from `catalyst-motion`; timing and easing from LottieFiles `motion-design` (Premium).
-Composition `{{ID}}` · project `{{FOLDER}}/video` · deliverables `out/{{SLUG}}*.mp4`
+Composition `{{ID}}` · project `outputs/{{FOLDER}}/video` · deliverable `outputs/{{FOLDER}}/{{SLUG}}.mp4`
 
 ## 1. Research (step 1)
 - **Source URL + date:**
@@ -65,7 +65,7 @@ Signature moment        :
 
 ## 7. Ledger entries (step 11 · paste into `catalyst-motion/ledger.md` and `catalyst-film/story/copy-ledger.md`)
 ```
-### <Film name> (`{{FOLDER}}/`)
+### <Film name> (`outputs/{{FOLDER}}/`)
 - **Arc:**
 - **UI:**
 - **Type 1:**

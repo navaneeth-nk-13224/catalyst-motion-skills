@@ -48,7 +48,7 @@ await browser.close({ silent: true });
 // contact sheet is a review aid only: system FFmpeg if present (the bundled one lacks the tile filter)
 let sheet = "";
 try {
-  execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-pattern_type", "glob", "-i", path.join(outDir, "f*.png"), "-vf", `scale=640:-1,tile=4x${Math.ceil(frames.length / 4)}`, "-frames:v", "1", path.join(outDir, "sheet.png")]);
+  execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-pattern_type", "glob", "-i", path.join(outDir, "f*.png"), "-vf", `scale=480:-1,tile=4x${Math.ceil(frames.length / 4)}`, "-frames:v", "1", path.join(outDir, "sheet.png")]);
   sheet = " + sheet";
 } catch {
   sheet = " (no contact sheet: brew install ffmpeg to get one)";

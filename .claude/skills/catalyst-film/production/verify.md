@@ -36,4 +36,4 @@ Check the sheet against `LEARNINGS.md` §Stills checklist:
 - Paste the verify table into brief §5.
 - List the copy that is "my wording" or illustrative.
 - Flag anything not checked.
-- Append the ledger entry (pipeline step 11), then `open out/<slug>.mp4`.
+- Append the ledger entry (pipeline step 11), then `open outputs/<film>/<slug>.mp4`.

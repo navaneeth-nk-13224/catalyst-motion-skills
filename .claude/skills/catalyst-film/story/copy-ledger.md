@@ -4,7 +4,7 @@ The script-freshness gate (`script-freshness.md`) reads this file. Append one en
 - **Benched:** used in either of the last 2 films. It can't be the opening, the closing or the hero line.
 - **Retired:** used in 3 or more films. Not used at all until 3 films pass without it.
 
-Last 2 films: **Stratus corporate, Stratus "One file"**.
+Last 2 films: **Progressive Zoho MCP, Progressive Zoho MCP v2**.
 
 ## Status
 | Pattern | Films | Status |
@@ -22,51 +22,12 @@ Last 2 films: **Stratus corporate, Stratus "One file"**.
 | 6 lines, one feature per line | CloudScale 1, CloudScale 2, Slate 30s, AppSail, Stratus manifesto, Stratus corporate, Stratus One file | **Retired** as the default structure |
 | "This is one file." (demonstrative, object-led opener) | Stratus One file | Benched |
 | Callback ending ("One file, or millions.") | Stratus One file | Benched |
-| Numbered benefits read in order (01 / 02 / 03) | Stratus corporate | Benched |
-| "Start free with five gigabytes." CTA line | Stratus corporate | Benched |
+| Numbered benefits read in order (01 / 02 / 03) | Stratus corporate | Available |
+| "Start free with five gigabytes." CTA line | Stratus corporate | Available |
+| "Only the required tools. Every action, completed." (fragment ending) | Progressive MCP | Benched |
+| Problem → solution narrated over fixed user timestamps | Progressive MCP | Benched |
 
-## Entries
-### Slate 10s
-- **Mode:** narrator.
-- **Opening:** "Frontend hosting, built for the agent era."
-- **Ending:** "Catalyst Slate."
-- **Phrases:** "Bring any framework. Ship from any coding agent." · "Free bandwidth. Full-stack by default."
-
-### CloudScale 1
-- **Mode:** narrator.
-- **Opening:** "Meet CloudScale. The agent-ready back end, for you and your agents."
-- **Ending:** "Catalyst CloudScale."
-- **Device:** a name list ("Claude, Codex, Gemini, Cursor").
-- **Phrases:** "Every component, in one place."
-
-### CloudScale 2
-- **Mode:** narrator.
-- **Opening:** "Your agent builds the app in minutes. Then the back end takes weeks."
-- **Ending:** "Catalyst CloudScale."
-- **Device:** contrast.
-- **Phrases:** "Ask Claude, Codex, Gemini, or Cursor." · "Pay for what you ship. Nothing else."
-
-### Slate 30s
-- **Mode:** narrator.
-- **Opening:** "Your app goes viral. Then the bill does."
-- **Ending:** "Catalyst Slate. Pay for what you ship."
-- **Device:** Q→A ("Traffic spikes? … Your whole team? Free too.").
-- **Phrases:** "local to live" · "full-stack by default".
-
-### AppSail 30s
-- **Mode:** narrator.
-- **Opening:** "One prompt to your coding agent, and your Flask app is live."
-- **Ending:** "Ready to ship? Catalyst AppSail."
-- **Device:** Q→A chain.
-- **Phrases:** "Deploy any Docker image, as is." · "Migrate in minutes."
-
-### Stratus manifesto
-- **Mode:** narrator.
-- **Opening:** "Your data is yours. Taking it out shouldn't cost a thing."
-- **Ending:** "Catalyst Stratus. Pay for what you store. Nothing else."
-- **Device:** manifesto restatement.
-- **Phrases:** "egress is free" · "It grows with you, without complex configs."
-
+## Entries (last 3 films; older ones in `copy-ledger-archive.md`)
 ### Stratus corporate
 - **Mode:** narrator (user asked for a corporate explainer).
 - **Opening:** "Your data keeps growing. So does the cost of accessing it."
@@ -74,9 +35,24 @@ Last 2 films: **Stratus corporate, Stratus "One file"**.
 - **Device:** numbered benefits.
 - **Phrases:** "teams and AI agents alike" · "zero egress fees" · "leading compliance standards".
 
+
 ### Stratus "One file"
 - **Mode:** narrator.
 - **Opening:** "This is one file."
 - **Ending:** "One file, or millions. Catalyst Stratus." (a callback)
 - **Device:** an object's journey.
 - **Phrases:** "Download it ten thousand times. The egress bill stays at zero."
+
+
+### Progressive Zoho MCP
+- **Mode:** narrator (the user's own script, verbatim; user brief wins).
+- **Opening:** "Using the context from your prompt, AI models such as Claude, GPT, Copilot, and Cursor, access the MCP tools…"
+- **Ending:** "Only the required tools. Every action, completed." (trimmed with approval)
+- **Device:** contrast (all tools vs only the required tools).
+- **Phrases:** "context may get exhausted, causing hallucinations and wasted tokens" · "tool discovery becomes dynamic". One spoken name list (user's), shown as highlights.
+
+### Progressive Zoho MCP v2
+- Same VO as Progressive Zoho MCP (the user's script, re-cut visually). No new copy patterns; on-screen type adds "Dynamic tool discovery" and "Every action, completed."
+
+### Progressive Zoho MCP v2 test (`outputs/progressive mcp v2 test/`)
+- Test rebuild of v2: same VO, copied verbatim. No new copy patterns; the copy-ledger gate was waived by the user for the test.
