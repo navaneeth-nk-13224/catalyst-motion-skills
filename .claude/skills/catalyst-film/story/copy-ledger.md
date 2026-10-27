@@ -4,7 +4,7 @@ The script-freshness gate (`script-freshness.md`) reads this file. Append one en
 - **Benched:** used in either of the last 2 films. It can't be the opening, the closing or the hero line.
 - **Retired:** used in 3 or more films. Not used at all until 3 films pass without it.
 
-Last 2 films: **Progressive Zoho MCP, Progressive Zoho MCP v2**.
+Last 2 films: **Progressive Zoho MCP v2, Catalyst Functions**.
 
 ## Status
 | Pattern | Films | Status |
@@ -24,8 +24,15 @@ Last 2 films: **Progressive Zoho MCP, Progressive Zoho MCP v2**.
 | Callback ending ("One file, or millions.") | Stratus One file | Benched |
 | Numbered benefits read in order (01 / 02 / 03) | Stratus corporate | Available |
 | "Start free with five gigabytes." CTA line | Stratus corporate | Available |
-| "Only the required tools. Every action, completed." (fragment ending) | Progressive MCP | Benched |
-| Problem → solution narrated over fixed user timestamps | Progressive MCP | Benched |
+| "Only the required tools. Every action, completed." (fragment ending) | Progressive MCP | Available |
+| Problem → solution narrated over fixed user timestamps | Progressive MCP | Available |
+| First person — the product speaks ("Until someone calls, I don't exist.") | Catalyst Functions | Benched |
+| "Call me…" repetition at line starts | Catalyst Functions | Benched |
+| Command ending as a callback ("So go on. Call me.") | Catalyst Functions | Benched |
+| Code line as the silent opening (sound first) | Catalyst Functions | Benched |
+| "Your code. Infinite possibilities." (fragment ending) | Functions 30s | Benched |
+| "Introducing Zoho Catalyst ___." reveal line | Functions 30s | Benched |
+| "___ deserves a faster way to run." opener | Functions 30s | Benched |
 
 ## Entries (last 3 films; older ones in `copy-ledger-archive.md`)
 ### Stratus corporate
@@ -56,3 +63,17 @@ Last 2 films: **Progressive Zoho MCP, Progressive Zoho MCP v2**.
 
 ### Progressive Zoho MCP v2 test (`outputs/progressive mcp v2 test/`)
 - Test rebuild of v2: same VO, copied verbatim. No new copy patterns; the copy-ledger gate was waived by the user for the test.
+
+### Catalyst Functions (`outputs/functions/`)
+- **Mode:** first person (the function speaks).
+- **Opening:** sound + a typed code line, then "Until someone calls, I don't exist."
+- **Ending:** "So go on. Call me." (a command; name on screen only)
+- **Device:** repetition ("Call me with a request… at midnight… when an order lands… a million times.")
+- **Phrases:** "No server waiting. No bill running." · "You're billed for the seconds I worked." · 7 lines, 2 silent beats.
+
+### Catalyst Functions 30s
+- **Mode:** narrator (the user's pasted copy, verbatim; user brief wins). "backend" spoken as "back end".
+- **Opening:** "Your backend logic deserves a faster way to run." (retired "Your ___" opener, kept by user brief)
+- **Ending:** "Zoho Catalyst Functions. Your code. Infinite possibilities." (spoken name ending, kept by user brief)
+- **Device:** one object's birth and life.
+- **Phrases:** "deploy in seconds" · "let Catalyst handle the infrastructure" · "without managing servers" · "focus on what matters". On screen: "Scales as you grow." · "No servers to manage." · "Build faster."

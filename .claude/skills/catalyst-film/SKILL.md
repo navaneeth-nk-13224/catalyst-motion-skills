@@ -45,9 +45,10 @@ Code: read **only** `template/KIT.md` — never open the kit sources (`kit.tsx`,
 | 11 | Log | Append the film to both ledgers (status table rows + one entry); fill brief §5–7 | `verify` shows ✓ ledger_entry |
 
 ## Look and motion (catalyst-motion DNA)
-- `#000` void, true isometric (±30° + vertical; no perspective, no camera rotation). Dark matte solids, 1px gradient edges.
+- `#000` void, no perspective, no camera rotation. Dark matte solids, 1px gradient edges.
+- **The view fits the idea (user rule) — don't default to isometric.** Iso only where depth carries meaning (systems, flows between parts, scale). Code, UI, type, numbers, single objects → flat front-on; schedules/timelines/sequences → plan; details → macro. **Iso ≤ half the scenes, ≥ 2 non-iso scenes;** text/UI never skewed onto iso planes (except one L10). Name each scene's VIEW in the storyboard. (`catalyst-motion/dna/style-dna.md` §1a)
 - **Light is the only colour.** Accent `#7DF4FF → #FFFD99 → #FF4646`, never animated; brightness via opacity only.
-- Matter calm (≤ ~120px/s, no overshoot); energy busy. Light travels on iso axes, turns only at right angles, is born → travels → dissolves.
+- Matter calm (≤ ~120px/s, no overshoot); energy busy. Light travels on the view's axes, turns only at right angles, is born → travels → dissolves.
 - **Type 1** (ambient iso system) for important features; **Type 2** (UI assembly: frame → build ≤2.5s → resolve → hold ≥1.5s) for small ones.
 - Easing `(0.4,0,0.2,1)`; enter `(0,0,0.2,1)`; exit `(0.4,0,1,1)` 30–50% shorter. Durations 350/500/800ms. Stagger < 500ms per group (two-speed cascade: 33–50ms siblings, ~300ms groups). 0% overshoot except 5% on one success moment.
 - Layers per scene: primary verb · secondary reaction (10–30%, +100–300ms) · ambient (10–20%).
@@ -80,6 +81,7 @@ L6 lower third · L7 no type · L8 diagonal · L9 annotated world · L10 window 
 - [ ] No wrapped/clipped headline (76–84px in ≥ 860px columns, or `nowrap`); labels in open space, never toward text
 - [ ] **Clear space:** crop every text block at full size — nothing touches art, cables or other text (≥ 56px from art, ≥ 40px between texts). Check after any layout or camera change.
 - [ ] Hero recognisable without labels; fills its zone; one hero per Type 1 scene
+- [ ] View mix: iso in ≤ half the scenes; every iso scene needs depth to make its point; code/UI/type read flat
 - [ ] Transitions show content; every resolve on screen ≥ 0.7s before its exit
 - [ ] Thumbnail row doesn't look like one template; nothing benched/retired is a hero
 - Re-frame the camera per layout (the 55–65% mid shot reads small in wide layouts). Off-screen solids emerge as the camera arrives.

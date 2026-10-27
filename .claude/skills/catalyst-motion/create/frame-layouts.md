@@ -1,5 +1,7 @@
 # Frame layouts — how text and art share the screen
 
+**View first (user rule):** each scene picks its view (isometric · flat · plan · macro, `dna/style-dna.md` §1a) before its layout. Most layouts work in any view; iso ≤ half the scenes of a film.
+
 `composition-library.md` arranges objects *inside* the isometric world. This file is about the
 **screen**: where type sits, how large it is, how much of the frame the art takes, and how scenes hand over.
 

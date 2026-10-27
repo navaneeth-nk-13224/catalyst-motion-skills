@@ -40,7 +40,7 @@ Swap test         : every line belongs to this film ✓
 **Layout rhythm:** L? → L? → … (no repeats; ≤ 1 split per 4 scenes; giant-type + quiet scenes; wide + close-up)
 **Transitions:** (≤ every other cut a plain slide)
 
-One block per scene: ARC · TYPE · VO · LAYOUT · TEXT ANCHOR · TRANSITION (lands on word …) · LAYERS · RESOLVE · SFX · ORIGINALITY · FRESHNESS
+One block per scene: ARC · TYPE · VO · VIEW (iso · flat · plan · macro — why) · LAYOUT · TEXT ANCHOR · TRANSITION (lands on word …) · LAYERS · RESOLVE · SFX · ORIGINALITY · FRESHNESS
 
 ### Freshness block (`catalyst-motion/create/freshness.md` §4, checked against `ledger.md`)
 ```

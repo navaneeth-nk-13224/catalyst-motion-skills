@@ -5,7 +5,21 @@ listed here is free to change (see "Free variables" at the end).
 
 ## 1. World
 - **Pure black void (`#000`).** Objects never sit on a scene or horizon. At most there is a faint isometric floor grid that fades out at the edges.
-- **True isometric projection.** Directions are 30° left-up, 30° right-up and vertical. No perspective, no camera FOV, no free 3D rotation.
+- **The view fits the idea — isometric is a choice, not the default (user rule).** Pick the view per scene (see §1a).
+  Whatever the view: no perspective, no camera FOV, no free 3D rotation.
+
+### 1a. Views (pick one per scene; switch when the idea changes)
+| View | Use it for | Light travels |
+|---|---|---|
+| **Isometric** (30° left-up, 30° right-up, vertical) | Spatial ideas: parts of a system connecting, data moving between services, replication and scale, a "world" | Along iso axes |
+| **Flat, front-on** | Code, UI, type, numbers, a single object or icon, cards, charts — anything read rather than explored | Horizontal / vertical |
+| **Plan / diagram** (top-down, flat) | Time and order: schedules, timelines, sequences, maps, calendars | Horizontal / vertical |
+| **Macro** (flat close-up, one object fills the frame) | A detail, a state change, the signature moment | Horizontal / vertical |
+- **Isometric only when depth carries meaning.** Ask: "would a flat view say this as clearly?" If yes, go flat.
+- **Text, code and UI stay flat.** Never skew them onto an iso plane, except one deliberate L10 window-in-world per film.
+- **Per film:** isometric in **at most half** of the scenes, and **at least 2 non-iso scenes**. The storyboard names each scene's VIEW and why.
+- **Switching views** happens on a cut or as a deliberate morph (e.g. flat type tilting into iso), never mid-hold.
+- **Every other invariant holds in every view:** `#000` void, matte dark solids, 1px edge light, light as the only colour, right-angle turns.
 - **Matte, dark solids.** Faces are `#0D0D0D`–`#181818` with 1px edge strokes in `#252525`–`#303030`.
   - Form comes from the *edges*, not from shading.
 - **Light is the only color.** The accent gradient `#7DF4FF → #FFFD99 → #FF4646` lives only on:
@@ -17,7 +31,7 @@ listed here is free to change (see "Free variables" at the end).
 | Invariant | Meaning | Why it reads as Catalyst |
 |---|---|---|
 | **Matter is calm, energy is busy** | Solids only float or glide: small amplitude, slow, sine. Everything fast is light. | The "living infrastructure" feeling |
-| **Motion follows the grid** | Every travel vector is parallel to an iso axis. A path turns only at right-angle corners in iso space. | Engineered, circuit-like precision |
+| **Motion follows the grid** | Every travel vector is parallel to an axis of the scene's view (iso axes in iso; horizontal/vertical in flat views). A path turns only at right-angle corners. | Engineered, circuit-like precision |
 | **Light has a life cycle** | Born (scale or draw from 0), then travels, then *dissolves* (opacity → 0). It never pops off. | Soft, premium, never glitchy |
 | **Color never animates** | Only geometry and opacity change. Brightness = opacity. | Calm; the gradient stays sacred |
 | **Polyrhythm, not sync** | Loops have incommensurate periods (e.g. 4.0 / 5.5 / 3.5s). Starts are spaced on a ~500ms beat grid. | Never visibly repeats, never mechanical |

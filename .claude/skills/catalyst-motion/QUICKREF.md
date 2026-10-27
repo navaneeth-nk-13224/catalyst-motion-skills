@@ -9,12 +9,13 @@ LottieFiles `motion-design` → this skill → `dna/visual-aesthetics.md`.
 - **Type 2** (UI assembly) is for **small animations**.
 
 ## DNA invariants (`dna/style-dna.md`)
-- **The world:** a `#000` void in true isometric (±30° and vertical; no perspective, no camera rotation).
+- **The world:** a `#000` void; no perspective, no camera rotation.
+- **The view fits the idea (user rule):** isometric only when depth/space carries the meaning (systems, flows between parts, scale). Code, UI, type, numbers, single objects → **flat front-on**; schedules, timelines, sequences → **plan/diagram**; details → **macro**. Iso in ≤ half the scenes, ≥ 2 non-iso scenes per film. Text and UI never skewed onto iso planes (except one L10). `dna/style-dna.md` §1a.
 - **Solids:** dark matte with 1px gradient edges.
 - **Colour:** light is the only colour. The accent gradient `#7DF4FF → #FFFD99 → #FF4646` is never animated, and brightness comes from opacity only.
 - **Motion:**
   - Matter is calm, energy is busy. Solids move slowly and gently (≤ ~120px/s, no overshoot).
-  - Light travels along iso axes, turning only at right-angle corners.
+  - Light travels along the view's axes (iso axes in iso, horizontal/vertical in flat views), turning only at right-angle corners.
   - Light is born, travels, then dissolves. It never pops off.
 - **Rhythm:** polyrhythmic loops; 2–4 light events at once; starts on a ~500ms grid.
 

@@ -56,6 +56,9 @@ their request. Continue here only if they insist. After delivering a film, remin
   What carries the style into a clone: `.claude/skills/` (rules, ledgers, template, pinned toolchain). One video per film, no variants.
 - **Clear space.** Text never touches or overlaps illustrations: ≥ 56px from any art outline, cable or card, ≥ 40px between
   text blocks. Check every text block at full size on the stills before showing them.
+- **The view fits the idea — don't always use isometric.** Iso only where depth carries the meaning (systems, flows
+  between parts, scale). Code, UI, type, numbers and single objects go flat front-on; schedules and timelines go plan view.
+  Iso in at most half the scenes, at least 2 non-iso scenes per film; name each scene's view in the storyboard.
 - **No captions.** Ever.
 - **Authorities:** LottieFiles `motion-design` → `catalyst-motion` (style, relevance, freshness, ledger) → `catalyst-film` (story, scripts, production).
 - **Don't change pinned versions** (`bin/toolchain.json`, `bin/requirements.lock`, `package-lock.json`) unless asked. They keep the look and sound consistent across machines.
