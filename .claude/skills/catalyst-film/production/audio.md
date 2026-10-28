@@ -9,9 +9,9 @@ All audio is generated locally and is original. No stock music and no cloud TTS.
   - Python ≥ 3.10 in a venv with `kokoro soundfile numpy`.
   - `brew install espeak-ng`.
   - Set `ESPEAK_DATA_PATH=/opt/homebrew/share/espeak-ng-data` and `PHONEMIZER_ESPEAK_LIBRARY=/opt/homebrew/lib/libespeak-ng.dylib`.
-- **Run:** `python scripts/film.py vo` (uses the persistent venv `~/.catalyst-film/venv`; skipped when the VO text, voice and speed are unchanged).
+- **Run:** `./film vo` (uses the persistent venv `~/.catalyst-film/venv`; skipped when the VO text, voice and speed are unchanged).
   This reads `vo[].text`, `voice` and `speed` from the timeline. It writes trimmed `outputs/<film>/build/vo/t<N>.wav` files and **writes the measured `dur` and word timestamps of each line back into `timeline.json`**, so checks and cues use real durations.
-- **Word timestamps are automatic.** `kokoro_vo.py` stores every word's film-clock onset in `vo[].words` (Kokoro token timestamps, corrected for the silence trim). Use `word(3, "Claude")` / `cue("agents.claude")` in TS, and `WORD()` / `CUE()` in `make_sound.py`. List them with `python scripts/film.py words`.
+- **Word timestamps are automatic.** `kokoro_vo.py` stores every word's film-clock onset in `vo[].words` (Kokoro token timestamps, corrected for the silence trim). Use `word(3, "Claude")` / `cue("agents.claude")` in TS, and `WORD()` / `CUE()` in `make_sound.py`. List them with `./film words`.
 - *Fallback only* (if timestamps are ever missing), find the word gaps with:
   ```sh
   ffmpeg -i ../build/vo/t2.wav -af silencedetect=noise=-38dB:d=0.06 -f null -

@@ -1,6 +1,6 @@
 """Mix — REPRODUCIBLE (pure NumPy / SciPy / pyloudnorm, pinned in requirements.lock; no system FFmpeg).
 
-  python scripts/film.py mix
+  ./film mix
 
 Same chain the films have always used:
   VO   : placed at vo[].at → high-pass 80 Hz → compressor (−20 dB, 3:1, 5 ms / 120 ms) → +5.6 dB

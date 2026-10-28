@@ -13,9 +13,9 @@ their request. Continue here only if they insist. After delivering a film, remin
 ## When someone clones this repo and asks for a film — always this order
 `outputs/` is empty in the repo. The skills and `.claude/skills/catalyst-film/template/` carry the style; every film is made fresh.
 
-1. **Check prerequisites.** Before anything else, every time:
+1. **Check prerequisites.** Before anything else, every time, in ONE call:
    ```sh
-   sh .claude/skills/catalyst-film/bin/doctor.sh            # add "outputs/<film>/video" once the film exists
+   sh .claude/skills/catalyst-film/bin/start.sh   # doctor + KIT.md + ledger Benched/Retired rows + script-freshness.md
    ```
 2. **Get the setup ready.** If anything shows ✗, list the failing items and the doctor's exact `fix:` commands.
    - System installs change the machine, so ask once, then run them: `brew install node python@3.11 espeak-ng` (`ffmpeg` optional, for contact sheets).
@@ -24,11 +24,11 @@ their request. Continue here only if they insist. After delivering a film, remin
 3. **Generate the script.** Start from the film-start digest `.claude/skills/catalyst-film/SKILL.md` (loaded with the skill)
    and `template/KIT.md`; open deep rule files only when a gate fails. Stages 1–7:
    - Research, then scaffold with `new-film.sh "<folder>" <CompId> <slug>`. This creates `outputs/<folder>/` and runs `npm ci` for the pinned Remotion.
-   - Run `doctor.sh "outputs/<folder>/video"`.
+   - `new-film.sh` runs the film doctor itself. Film commands are `./film <stage>` inside `outputs/<folder>/video`.
    - Story, then the script. The script goes through the freshness gate (`script-freshness.md` + `copy-ledger.md`).
    - Storyboard, then **show the script and storyboard and wait for approval**.
 4. **Show sample images.** Build the scenes (stage 8), then render 7–8 key stills of the most important moments
-   (`python scripts/film.py stills <frames>` → `outputs/<folder>/preview/`). Open them and **wait for approval** (stage 8b).
+   (`./film stills <frames>` → `outputs/<folder>/preview/`). Open them and **wait for approval** (stage 8b).
 5. **Build with every rule below.** Sound, mix, render, verify (stages 9–10). Verify must say ALL PASS.
    Then log the film in both ledgers (stage 11).
 6. **Store it in its own folder under `outputs/`.** Everything for the film ends up in `outputs/<folder>/`: brief, `video/` code,
@@ -36,16 +36,17 @@ their request. Continue here only if they insist. After delivering a film, remin
 
 ## Rules that always apply
 - **Keep token use lean without touching quality.** One film per session (suggest a fresh session if this one is long).
-  Read the digest, `KIT.md` and the ledgers' status tables — never the kit sources, old films' code or `synth.py`.
-  Review stills lean: one contact sheet per round, details via `film.py look <frame> [x y w h]` crops, never full-size stills.
+  Every call re-reads the whole context, so cost ≈ calls × context: batch independent commands into one call, don't retry blindly.
+  `start.sh` prints the digest's reading list in one call — never the kit sources, old films' code or `synth.py`.
+  Review stills lean: one contact sheet per round, details via `./film look <frame> [x y w h]` crops, never full-size stills.
   Never skip the approvals, self-review stills or key stills.
 - **Same style, not exact copies.** Films made on this machine are worked examples (style, motion, structure, code patterns); a clone
   learns the same things from the skills and ledgers. Never re-render them to "reproduce" them, and never treat byte-identical output as a goal.
 - **Never render or rebuild a video unless the user asks.** That includes existing films, re-renders "to check" and
-  forced rebuilds (`film.py all --force`, `render`). Setup, docs, skill and config work never needs a render. If a
+  forced rebuilds (`./film all --force`, `render`). Setup, docs, skill and config work never needs a render. If a
   change would require re-rendering, say so and ask first; re-rendering replaces the previous video in `outputs/`.
 - **Show key stills before the final render.** After the script and storyboard are approved and the scenes are built,
-  render 7–8 stills of the film's most important moments (`python scripts/film.py stills <frames>`), save them to
+  render 7–8 stills of the film's most important moments (`./film stills <frames>`), save them to
   `outputs/<film>/preview/`, open them, and wait for approval. Only then do sound, mix and the final render.
 - **Fresh words, not just fresh pictures.** Before writing any script, read `catalyst-film/story/script-freshness.md` and
   `story/copy-ledger.md`. Rotate the voice mode, opening, ending and device; no benched or retired phrases; run the swap test.

@@ -7,7 +7,7 @@ Catalyst (Zoho) motion films, made with a three-skill suite and one pipeline.
 ```sh
 sh .claude/skills/catalyst-film/bin/setup.sh                           # once per machine
 sh .claude/skills/catalyst-film/bin/new-film.sh "<folder>" <CompId> <slug>
-cd "outputs/<folder>/video" && python scripts/film.py check                      # …then vo · words · stills · sound · mix · render · verify
+cd "outputs/<folder>/video" && ./film check                      # …then vo · words · stills · sound · mix · render · verify
 ```
 
 | Path | What |

@@ -27,21 +27,21 @@ Code: read **only** `template/KIT.md` — never open the kit sources (`kit.tsx`,
 - **Script + storyboard approved, then 7–8 key stills approved,** before any sound, mix or final render.
 - **User briefs win** (their words, timestamps, mode). Vary everything else the rules allow.
 
-## Stages (commands run in `outputs/<film>/video`)
+## Stages (commands run in `outputs/<film>/video` as `./film <stage>`, the venv wrapper — never bare `python`)
 | # | Stage | Do | Gate |
 |---|---|---|---|
-| 0 | Prereqs | `sh .claude/skills/catalyst-film/bin/doctor.sh` | `✓ ready to build` |
+| 0 | Start | `sh .claude/skills/catalyst-film/bin/start.sh` — ONE call: doctor + KIT.md + both ledgers' Benched/Retired rows + script-freshness. Don't open those files separately | `✓ ready to build` |
 | 1 | Research | Product page (or the user's reference): real names, numbers | Every claim traceable, or "my wording" in brief §6 |
-| 2 | Scaffold | `sh .claude/skills/catalyst-film/bin/new-film.sh "<folder>" <CompId> <slug>` | tsc clean |
+| 2 | Scaffold | `sh .claude/skills/catalyst-film/bin/new-film.sh "<folder>" <CompId> <slug>` (also runs the film doctor) | tsc clean · `✓ doctor` |
 | 3 | Story | Core idea (1 sentence) · arc picked from the material | Every link *but/therefore* · ending rhymes with opening · arc ≠ last film (ledger) |
-| 4 | Script | `vo[]` + cuts in `src/timeline.json`; `python scripts/film.py check` | No ✗ slot; ~2.1 words/s of runtime; script freshness ✓ |
-| 5 | Voice | `film.py vo` then `film.py words` | Measured check passes; overruns → show numbers, user chooses (longer · trim · ≤1.1×) |
+| 4 | Script | `vo[]` + cuts in `src/timeline.json`; `./film check` | No ✗ slot; ~2.1 words/s of runtime; script freshness ✓ |
+| 5 | Voice | `./film vo` then `./film words` | Measured check passes; overruns → show numbers, user chooses (longer · trim · ≤1.1×) |
 | 6 | Storyboard | Brief §4 + `src/cues.json` (events pinned to VO words) | Layout rhythm · freshness · relevance (below) |
 | 7 | **Show the user** | Script + storyboard | Approved |
-| 8 | Build | `src/art.tsx` (new primitives) + `src/Film.tsx`; `film.py stills <frames>`; review lean (below), fix, repeat | Stills checklist (below) |
+| 8 | Build | `src/art.tsx` (new primitives) + `src/Film.tsx`; `./film stills <frames>`; review lean (below), fix, repeat | Stills checklist (below) |
 | 8b | **Key stills** | 7–8 most important moments → `outputs/<film>/preview/`, open, wait | **User approves** |
-| 9 | Sound | Write `audio-src/make_sound.py` (score only; library is `synth.py`); `film.py sound`, `film.py mix` | −14 LUFS ±0.5 · TP ≤ −1 dBTP |
-| 10 | Render + verify | `film.py render`, `film.py verify` | ALL PASS |
+| 9 | Sound | Write `audio-src/make_sound.py` (score only; library is `synth.py`); `./film sound`, `./film mix` | −14 LUFS ±0.5 · TP ≤ −1 dBTP |
+| 10 | Render + verify | `./film render`, `./film verify` | ALL PASS |
 | 11 | Log | Append the film to both ledgers (status table rows + one entry); fill brief §5–7 | `verify` shows ✓ ledger_entry |
 
 ## Look and motion (catalyst-motion DNA)
@@ -74,7 +74,7 @@ L6 lower third · L7 no type · L8 diagonal · L9 annotated world · L10 window 
 - Kokoro `af_heart` @1.05: ~2.9 words/s inside a line; slot = words/2.9 + 0.4s. Punctuation directs pauses. "back end" not "backend"; brand words checked with phonemes. Name lists → on-screen highlights on each name, not staggers.
 
 ## Reviewing stills lean (images stay in the context and are re-read every turn)
-- Per review round: read **one** contact sheet (`preview/sheet.png`, 480px tiles). For detail use `python scripts/film.py look <frame> [x y w h]` (a crop or a ≤ 1000px downscale), never a full-size still.
+- Per review round: read **one** contact sheet (`preview/sheet.png`, 480px tiles). For detail use `./film look <frame> [x y w h]` (a crop or a ≤ 1000px downscale), never a full-size still.
 - Crop only the areas you are checking (labels, transitions, clear space). Several checks → one `look` crop each, or one composite you build with ffmpeg; never re-read images you already checked.
 - The user's key stills are opened **for the user** (`open`); don't read them again unless a fix needs re-checking.
 

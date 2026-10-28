@@ -24,4 +24,5 @@ SRC=$(find "$PROJECT" -maxdepth 4 -type d -name node_modules -path "*/video/node
 if [ -n "$SRC" ]; then cp -c -R "$SRC" "$DEST/video/" 2>/dev/null || cp -R "$SRC" "$DEST/video/"; else (cd "$DEST/video" && npm ci --silent); fi
 sed "s/{{SLUG}}/$SLUG/g; s/{{ID}}/$ID/g; s#{{FOLDER}}#$FOLDER#g" "$SKILL/story/brief-template.md" > "$DEST/$SLUG-brief.md"
 (cd "$DEST/video" && npx tsc --noEmit) && echo "✓ outputs/$FOLDER/video ready · brief: outputs/$FOLDER/$SLUG-brief.md"
-echo "  next: read catalyst-film/SKILL.md (digest) + template/KIT.md + the ledger status tables, fill the brief → edit src/timeline.json → python scripts/film.py check"
+sh "$SKILL/bin/doctor.sh" "$DEST/video" --quiet >/dev/null 2>&1 && echo "✓ doctor: film project ready" || sh "$SKILL/bin/doctor.sh" "$DEST/video"
+echo "  next: fill the brief → edit src/timeline.json → ./film check   (commands run in outputs/$FOLDER/video)"

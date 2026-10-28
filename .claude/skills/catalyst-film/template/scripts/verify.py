@@ -1,7 +1,7 @@
 """Delivery checks + reproducibility lock.
 
-  python scripts/film.py verify        checks the deliverable; if film.lock.json exists, compares every stage to it
-  python scripts/film.py lock          (optional dev tool) checksum this build to confirm a refactor changed nothing — git-ignored
+  ./film verify        checks the deliverable; if film.lock.json exists, compares every stage to it
+  ./film lock          (optional dev tool) checksum this build to confirm a refactor changed nothing — git-ignored
 
 Deliverable: outputs/<film>/<slug>.mp4 — size · fps · duration (±1 frame) · h264+aac · −14 ±0.5 LUFS · TP ≤ −1 dBTP,
 exactly one video, measured VO (dur + words), logged in the motif ledger.
@@ -74,7 +74,7 @@ def versions():
 def check_deliverable():
     rows, fails = [], 0
     if not MP4.exists():
-        print(f"✗ missing {MP4.relative_to(ROOT)} — run: python scripts/film.py render")
+        print(f"✗ missing {MP4.relative_to(ROOT)} — run: ./film render")
         return 1
     p = json.loads(remotion("ffprobe", "-v", "error", "-show_entries", "stream=codec_type,codec_name,width,height,r_frame_rate:format=duration", "-of", "json", MP4) or "{}")
     v = next(s for s in p["streams"] if s["codec_type"] == "video")

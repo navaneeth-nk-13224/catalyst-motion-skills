@@ -16,7 +16,7 @@ const slug = tl.slug ?? tl.id.toLowerCase();
 const outDir = path.dirname(root); // outputs/<film>
 const concurrency = Number((process.argv.find((a) => a.startsWith("--concurrency=")) ?? "--concurrency=8").split("=")[1]);
 const mix = path.join(outDir, "build/audio/mix.wav");
-if (!existsSync(mix)) throw new Error(`missing ${path.relative(project, mix)} — run: python scripts/film.py mix`);
+if (!existsSync(mix)) throw new Error(`missing ${path.relative(project, mix)} — run: ./film mix`);
 mkdirSync(outDir, { recursive: true });
 for (const f of readdirSync(outDir)) if (/\.(mp4|srt|mov|webm)$/.test(f) && f !== `${slug}.mp4`) rmSync(path.join(outDir, f)); // single deliverable
 

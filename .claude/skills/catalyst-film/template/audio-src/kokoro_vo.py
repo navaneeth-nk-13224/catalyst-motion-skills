@@ -1,6 +1,6 @@
 """Voice-over from timeline.json with Kokoro-82M (Apache-2.0, github.com/hexgrad/kokoro) — REPRODUCIBLE.
 
-  python scripts/film.py vo
+  ./film vo
 
 Pinned model revision + local voice file (bin/toolchain.json) and a fixed seed per line: same text → same samples.
 Writes outputs/<film>/build/vo/l<N>.wav (raw) and t<N>.wav (silence-trimmed, 24 kHz mono), then writes back into timeline.json:

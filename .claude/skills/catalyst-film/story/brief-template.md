@@ -20,7 +20,7 @@ Rhyme     : how the ending answers the opening
 | # | Cut | Beat | VO line | On-screen type (key words only) |
 |---|---|---|---|---|
 
-`python scripts/film.py check` → paste the result line.
+`./film check` → paste the result line.
 
 ### Script freshness (`story/script-freshness.md` §8, vs `story/copy-ledger.md`)
 ```
@@ -53,7 +53,7 @@ Lead material           :
 Signature moment        :
 ```
 
-## 5. Checks (fill after render · `python scripts/film.py verify`)
+## 5. Checks (fill after render · `./film verify`)
 - **Originality:** the nearest references, and how many axes each scene differs on
 - **Anti-PPT film check:**
 - **Arc check:** every link is a but/therefore · the structure is never announced · the ending rhymes · it reads aloud without visuals

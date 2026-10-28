@@ -1,0 +1,7 @@
+{
+  "disableClaudeAiConnectors": true,
+  "disabledMcpjsonServers": ["playwright"],
+  "enabledPlugins": {
+    "figma@claude-plugins-official": false
+  }
+}

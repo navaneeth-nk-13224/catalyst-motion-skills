@@ -88,5 +88,5 @@ helpers `hz("D#4")` · `t_axis(s)` · `lp(x, cutoff)` · `band(x, lo, hi)` · `f
 Typing ticks: `CUE(start) + dur * (np.arccos(1 - 2*k/n) / np.pi)`, so ticks follow the eased curve.
 
 ## Scripts
-`python scripts/film.py check | vo | words | sound | mix | stills [frames…] | look <frame> [x y w h] | render | verify | doctor | all` (cached on inputs).
+`./film check | vo | words | sound | mix | stills [frames…] | look <frame> [x y w h] | render | verify | doctor | all` (cached on inputs).
 `look` writes one small review image (crop and/or downscale) to `outputs/<film>/build/review/`; review with it instead of reading full-size stills.

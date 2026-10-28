@@ -9,17 +9,17 @@ sh .claude/skills/catalyst-film/bin/new-film.sh "<folder>" <CompositionId> <slug
 
 ## Run order (inside `outputs/<folder>/video`)
 ```sh
-python scripts/film.py check      # word budget gate — after every script edit
-python scripts/film.py vo         # Kokoro → dur + word timestamps (cached)
-python scripts/film.py words      # every VO word with its film-clock time → pin cues in src/cues.json
+./film check      # word budget gate — after every script edit
+./film vo         # Kokoro → dur + word timestamps (cached)
+./film words      # every VO word with its film-clock time → pin cues in src/cues.json
 # … build src/art.tsx + src/Film.tsx with cue()/word() …
-python scripts/film.py stills     # stills + sheet → outputs/<film>/preview/ (one bundle)   [frames…]
+./film stills     # stills + sheet → outputs/<film>/preview/ (one bundle)   [frames…]
 # … write make_sound.py (score + SFX only) with CUE()/WORD() …
-python scripts/film.py sound      # score + SFX (cached)
-python scripts/film.py mix        # ducking + two-pass loudnorm (cached)
-python scripts/film.py render     # the ONE deliverable → outputs/<film>/<slug>.mp4 (picture + full mix, no captions)
-python scripts/film.py verify     # automatic delivery checks → ALL PASS
-python scripts/film.py all        # everything above in order, cached stages skipped (--force to redo)
+./film sound      # score + SFX (cached)
+./film mix        # ducking + two-pass loudnorm (cached)
+./film render     # the ONE deliverable → outputs/<film>/<slug>.mp4 (picture + full mix, no captions)
+./film verify     # automatic delivery checks → ALL PASS
+./film all        # everything above in order, cached stages skipped (--force to redo)
 ```
 
 ## What's in the template

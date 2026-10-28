@@ -1,7 +1,7 @@
 """Score + SFX for THIS film (rewrite per film). The instruments live in audio-src/synth.py — don't copy them here.
 Music: <tempo> BPM, <key> (new key per film), arrangement following the arc (production/audio.md §2).
 Every event time comes from src/cues.json via CUE() — the same names the visuals use.
-Usage: python scripts/film.py sound   → outputs/<film>/build/audio/music.wav, sfx.wav"""
+Usage: ./film sound   → outputs/<film>/build/audio/music.wav, sfx.wav"""
 import sys
 from pathlib import Path
 

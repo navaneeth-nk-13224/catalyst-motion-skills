@@ -3,7 +3,7 @@
 Review stills before rendering. Render only once the frames are right.
 
 ## 1. Stills and contact sheet
-`python scripts/film.py stills` renders the entry, middle and hold frame of every scene, plus the last frame, from **one bundle** using the shipped props. It writes `outputs/<film>/preview/f<frame>.png` and `sheet.png`. Pass frame numbers to target specific moments.
+`./film stills` renders the entry, middle and hold frame of every scene, plus the last frame, from **one bundle** using the shipped props. It writes `outputs/<film>/preview/f<frame>.png` and `sheet.png`. Pass frame numbers to target specific moments.
 
 Check the sheet against `LEARNINGS.md` §Stills checklist:
 - the hero object is literally relevant (`catalyst-motion/create/relevance.md`)
@@ -15,7 +15,7 @@ Check the sheet against `LEARNINGS.md` §Stills checklist:
 - no benched motif is a hero
 
 ## 2. Delivery checks (automatic)
-`python scripts/film.py verify` checks the one deliverable `outputs/<film>/<slug>.mp4`, prints a table and writes `outputs/<film>/build/review/verify.json`. Exit code 1 means a failure.
+`./film verify` checks the one deliverable `outputs/<film>/<slug>.mp4`, prints a table and writes `outputs/<film>/build/review/verify.json`. Exit code 1 means a failure.
 
 | Check | Pass |
 |---|---|

@@ -1,17 +1,17 @@
 """One command per pipeline stage, with caching so nothing slow re-runs unless its inputs changed.
 
-  python scripts/film.py check      word budget + slot overflow (fast gate; run after every script edit)
-  python scripts/film.py vo         Kokoro VO → dur + word timestamps            (skipped if VO text/voice/speed unchanged)
-  python scripts/film.py words      print every VO word with its film-clock time (for cues.json / scene constants)
-  python scripts/film.py sound      score + SFX (make_sound.py + synth.py)                 (skipped if script/timeline/cues unchanged)
-  python scripts/film.py mix        duck + loudnorm → outputs/<film>/build/audio/mix.wav      (skipped if inputs unchanged)
-  python scripts/film.py stills     key stills + contact sheet → outputs/<film>/preview/  [frames…]  (skipped if no visual change)
-  python scripts/film.py look       <frame> [x y w h] → one small crop/downscale for review (build/review/look-*.png)
-  python scripts/film.py render     the ONE deliverable: outputs/<film>/<slug>.mp4 (git-ignored)  (skipped if picture + mix unchanged)
-  python scripts/film.py verify     delivery checks + compare every stage to film.lock.json (if present)
-  python scripts/film.py lock       (optional, developer tool) checksum this build to confirm a refactor changed nothing — don't commit
-  python scripts/film.py doctor     check every prerequisite; prints the exact fix for anything missing
-  python scripts/film.py all        check → vo → sound → mix → stills → render → verify
+  ./film check      word budget + slot overflow (fast gate; run after every script edit)
+  ./film vo         Kokoro VO → dur + word timestamps            (skipped if VO text/voice/speed unchanged)
+  ./film words      print every VO word with its film-clock time (for cues.json / scene constants)
+  ./film sound      score + SFX (make_sound.py + synth.py)                 (skipped if script/timeline/cues unchanged)
+  ./film mix        duck + loudnorm → outputs/<film>/build/audio/mix.wav      (skipped if inputs unchanged)
+  ./film stills     key stills + contact sheet → outputs/<film>/preview/  [frames…]  (skipped if no visual change)
+  ./film look       <frame> [x y w h] → one small crop/downscale for review (build/review/look-*.png)
+  ./film render     the ONE deliverable: outputs/<film>/<slug>.mp4 (git-ignored)  (skipped if picture + mix unchanged)
+  ./film verify     delivery checks + compare every stage to film.lock.json (if present)
+  ./film lock       (optional, developer tool) checksum this build to confirm a refactor changed nothing — don't commit
+  ./film doctor     check every prerequisite; prints the exact fix for anything missing
+  ./film all        check → vo → sound → mix → stills → render → verify
   add --force to bypass the cache.
 Kokoro/numpy run in the persistent venv: $CATALYST_VENV or ~/.catalyst-film/venv (create with catalyst-film/bin/setup.sh)."""
 import hashlib
@@ -84,7 +84,13 @@ def visual_key():  # everything that can change a frame (src includes timeline.j
 
 
 def frame_args():
-    return [a for a in args[1:] if a.lstrip("-").isdigit()]
+    frames = [a for a in args[1:] if a.lstrip("-").isdigit()]
+    t = tl()
+    last = round(t["cuts"][-1] * t["fps"]) - 1
+    bad = [f for f in frames if not 0 <= int(f) <= last]
+    if bad:  # fail before Remotion starts (frame = seconds × fps)
+        sys.exit(f"✗ frame(s) {' '.join(bad)} out of range — valid 0..{last} ({t['fps']} fps · {t['cuts'][-1]}s; frame = seconds × {t['fps']})")
+    return frames
 
 
 def stage(name):
@@ -105,9 +111,12 @@ def stage(name):
     elif name == "stills":
         cached("stills", digest(visual_key(), ROOT / "scripts/stills.mjs", *frame_args()), lambda: sh("node", "scripts/stills.mjs", *frame_args()), [PREVIEW / "sheet.png"])
     elif name == "look":  # one small review image (crop and/or downscale) instead of reading full-size stills
-        n = [int(a) for a in args[1:] if a.lstrip("-").isdigit()]
-        if not n:
-            sys.exit("usage: film.py look <frame> [x y w h]")
+        n = [int(v) for a in args[1:] for v in a.split() if v.lstrip("-").isdigit()]  # accepts "x y w h" quoted or not
+        if len(n) not in (1, 5):
+            sys.exit("usage: ./film look <frame> [x y w h]   e.g. ./film look 276 960 200 640 420")
+        last = round(tl()["cuts"][-1] * tl()["fps"]) - 1
+        if not 0 <= n[0] <= last:
+            sys.exit(f"✗ frame {n[0]} out of range — valid 0..{last}")
         src = PREVIEW / f"f{n[0]:04d}.png"
         if not src.exists():
             sh("node", "scripts/stills.mjs", n[0])
@@ -139,7 +148,7 @@ if not args:
     sys.exit(__doc__)
 if args[0] == "all":  # never build on a broken setup
     if subprocess.run(["sh", str(PROJECT / ".claude/skills/catalyst-film/bin/doctor.sh"), str(ROOT), "--quiet"]).returncode:
-        sys.exit("✗ prerequisites missing — fix the items above (python scripts/film.py doctor), then re-run")
+        sys.exit("✗ prerequisites missing — fix the items above (./film doctor), then re-run")
 for s in (["check", "vo", "sound", "mix", "stills", "render", "verify"] if args[0] == "all" else [args[0]]):
     print(f"── {s} ──")
     stage(s)

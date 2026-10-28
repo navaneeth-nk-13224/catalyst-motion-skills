@@ -1,0 +1,3 @@
+#!/bin/sh
+# ./film <stage> — runs scripts/film.py with the pinned venv's Python (no PATH lookup, works from any directory).
+exec "${CATALYST_VENV:-$HOME/.catalyst-film/venv}/bin/python" "$(cd "$(dirname "$0")" && pwd)/scripts/film.py" "$@"
