@@ -2,7 +2,7 @@
 
 Append one entry per finished film; newest at the bottom. The freshness gate (`create/freshness.md`) reads this.
 **Benched** = used in either of the last 2 films. **Retired** = used in 3+ films (no hero use until 3 films pass without it).
-Last 2 films: **Progressive Zoho MCP v2, Catalyst Functions**. Retired motifs have now gone 3 of 3 films unused (Stratus, Stratus corporate, One file); they may return as supporting elements, but must still pass relevance.
+Last 2 films: **Functions 30s, SmartBrowz 30s**.
 
 ## Status (update after each film)
 | Motif | Films | Status |
@@ -28,45 +28,45 @@ Last 2 films: **Progressive Zoho MCP v2, Catalyst Functions**. Retired motifs ha
 | Glass vessel / glass tray (lead material: glass) | Stratus | Available |
 | Extruded iso type as an object (the "0" portal) | Stratus | Available |
 | Light ribbon folding at right angles (main carrier) | Stratus | Available |
-| Stacked glass strata / strata tower | Stratus | Benched |
+| Stacked glass strata / strata tower | Stratus | Available |
 | Orbit rings carrying labels | Stratus | Available |
 | Dot-horizon floor | Stratus | Available |
 | Prompt as a single line written into the void → condenses into an object | Stratus | Available |
 | File fragments dragged in by a cursor | Stratus | Available |
 | Type hand-off (a glyph becomes a 3D object) | Stratus | Available |
 | Manifesto arc | Stratus | Available |
-| Recognisable bucket (pail with rim + handle, files peeking out; grows to show scaling) | Stratus corporate | Benched |
-| File icons as iso objects with light trails | Stratus corporate | Benched |
-| Iso shield badges (compliance as objects) | Stratus corporate | Benched |
-| Person / agent icons as iso objects | Stratus corporate | Benched |
-| Dashboard close-up with a 2-line chart (hook) | Stratus corporate | Benched |
-| Split screen: console list vs IDE agent panel | Stratus corporate | Benched |
-| Numbered corporate supers (01/02/03 + gradient bar) | Stratus corporate | Benched |
-| Corporate SaaS explainer arc (hook → intro → 3 numbered benefits → end card) | Stratus corporate | Benched |
-| A drawn product photo as the hero object (the smartwatch) | Stratus One file | Benched |
-| One object's journey (customer story through a single file) | Stratus One file | Benched |
-| Bucket browser panel + the file path as giant type | Stratus One file | Benched |
-| Triptych of uses (store page · agent · report), copies flying to each | Stratus One file | Benched |
-| Download counter + copies streaming out on the iso diagonals | Stratus One file | Benched |
-| Library grid as the camera (5× close-up → pull-out reveal) | Stratus One file | Benched |
-| Lock badge + compliance seal chips | Stratus One file | Benched |
+| Recognisable bucket (pail with rim + handle, files peeking out; grows to show scaling) | Stratus corporate | Available |
+| File icons as iso objects with light trails | Stratus corporate | Available |
+| Iso shield badges (compliance as objects) | Stratus corporate | Available |
+| Person / agent icons as iso objects | Stratus corporate | Available |
+| Dashboard close-up with a 2-line chart (hook) | Stratus corporate | Available |
+| Split screen: console list vs IDE agent panel | Stratus corporate | Available |
+| Numbered corporate supers (01/02/03 + gradient bar) | Stratus corporate | Available |
+| Corporate SaaS explainer arc (hook → intro → 3 numbered benefits → end card) | Stratus corporate | Available |
+| A drawn product photo as the hero object (the smartwatch) | Stratus One file | Available |
+| One object's journey (customer story through a single file) | Stratus One file | Available |
+| Bucket browser panel + the file path as giant type | Stratus One file | Available |
+| Triptych of uses (store page · agent · report), copies flying to each | Stratus One file | Available |
+| Download counter + copies streaming out on the iso diagonals | Stratus One file | Available |
+| Library grid as the camera (5× close-up → pull-out reveal) | Stratus One file | Available |
+| Lock badge + compliance seal chips | Stratus One file | Available |
 | Iso server chassis with sliding product drawers (port LEDs, labels in open space) | Progressive MCP | Available |
 | Tool-chip flood on iso-axis legs into a context tray | Progressive MCP | Available |
 | Context meter filling cool → ember, garbled tool names (failure close-up) | Progressive MCP | Available |
 | A flood folding into five cards (signature) · discovery cards on an iso diagonal | Progressive MCP | Available |
 | Tool cards resolving placeholder → result (no ticks) | Progressive MCP | Available |
-| Iso patch panel as the server (port blocks sized to tool counts) | Progressive MCP v2 | Benched |
-| Cables of light on iso legs, retracting in one sweep (signature) | Progressive MCP v2 | Benched |
-| Iso call ladder (sequence diagram on the floor, one rung per call) | Progressive MCP v2 | Benched |
-| Chat composer with a model switcher flipping on spoken names | Progressive MCP v2 | Benched |
-| Context pane of real JSON + a hallucinated call and error | Progressive MCP v2 | Benched |
-| One document assembled field by field by three tools (invoice) | Progressive MCP v2 | Benched |
-| Extruded iso `{ }` braces as the function (drawn by light, extrusion grows, flat type → iso tilt) | Catalyst Functions | Benched |
-| Request string as characters of light on the iso axis (in → braces → JSON out) | Catalyst Functions | Benched |
-| Week strip of night tiles, one function born → run → shut per night + cron token card | Catalyst Functions | Benched |
-| Order notification firing an event line that wakes the function | Catalyst Functions | Benched |
-| Instance fan (iso grid of function replicas spreading by rings) + log counter to 1,000,000 | Catalyst Functions | Benched |
-| Braces sliding shut into a spark (signature) + compute-time readout freezing | Catalyst Functions | Benched |
+| Iso patch panel as the server (port blocks sized to tool counts) | Progressive MCP v2 | Available |
+| Cables of light on iso legs, retracting in one sweep (signature) | Progressive MCP v2 | Available |
+| Iso call ladder (sequence diagram on the floor, one rung per call) | Progressive MCP v2 | Available |
+| Chat composer with a model switcher flipping on spoken names | Progressive MCP v2 | Available |
+| Context pane of real JSON + a hallucinated call and error | Progressive MCP v2 | Available |
+| One document assembled field by field by three tools (invoice) | Progressive MCP v2 | Available |
+| Extruded iso `{ }` braces as the function (drawn by light, extrusion grows, flat type → iso tilt) | Catalyst Functions | Available |
+| Request string as characters of light on the iso axis (in → braces → JSON out) | Catalyst Functions | Available |
+| Week strip of night tiles, one function born → run → shut per night + cron token card | Catalyst Functions | Available |
+| Order notification firing an event line that wakes the function | Catalyst Functions | Available |
+| Instance fan (iso grid of function replicas spreading by rings) + log counter to 1,000,000 | Catalyst Functions | Available |
+| Braces sliding shut into a spark (signature) + compute-time readout freezing | Catalyst Functions | Available |
 | Extruded iso curly braces `{ }` as the function, real code etched between them | Functions 30s | Benched |
 | Code lines lighting top → bottom as execution (main light carrier) | Functions 30s | Benched |
 | Code lifting off an editor into a 3D object (affine morph, signature) | Functions 30s | Benched |
@@ -75,6 +75,13 @@ Last 2 films: **Progressive Zoho MCP v2, Catalyst Functions**. Retired motifs ha
 | Instance field: one object copied into a diamond grid on iso axes | Functions 30s | Benched |
 | Chain of functions on one iso axis, lighting in order | Functions 30s | Benched |
 | Flat brace glyphs closing around giant end-card type | Functions 30s | Benched |
+| Room corner lined with two iso walls of browser panes (Browser Grid ×40) | SmartBrowz 30s | Benched |
+| Crop brackets of light snapping onto regions (main light carrier) | SmartBrowz 30s | Benched |
+| Browser chrome peeling off every pane → bare lit pages (headless, signature) | SmartBrowz 30s | Benched |
+| Store page close-up with a price flipping + window dealing into copies | SmartBrowz 30s | Benched |
+| Screenshot thumbnails flying into a PDF report page | SmartBrowz 30s | Benched |
+| Legacy portal read by a light ruler; rows lift into clean cards | SmartBrowz 30s | Benched |
+| Giant ×N counter with a row of window glyphs filling | SmartBrowz 30s | Benched (giant number counter: 3 films → **Retired**) |
 
 ## Entries (last 3 films; older ones in `ledger-archive.md`)
 ### Stratus corporate 30s (`outputs/stratus corporate/`)
@@ -144,3 +151,10 @@ Last 2 films: **Progressive Zoho MCP v2, Catalyst Functions**. Retired motifs ha
 - **Layouts:** L4 → L3 → L10 → L9 → L5 (wide) → L13 (close-up → pull-out) → L4. Transitions: type hand-off · camera glide · code-lift morph · glide out · push-in/pull-out · plain slide.
 - **Signature:** the code lifts off the editor and folds into the braces as a running object.
 - **Audio:** D major, 112 BPM; kick drops for the close-up breath. −14.02 LUFS, −1.40 dBTP.
+
+### SmartBrowz 30s (`outputs/smartbrowz 30s/`)
+- **Arc:** escalating errand list (a note to the browser; each request bigger). Views: flat · flat · iso · flat · flat · iso · flat (iso 2/7).
+- **UI:** store page with price flip (₹2,499 → ₹1,999) + deal into copies · screenshots → PDF report (mirror split) · legacy "Inventory Portal v2.3" with "API: none", read by a ruler, rows → cards (diagonal) · ×40 → ×1,000 counter + window glyph row.
+- **Type 1:** room corner with two walls of 20 browser panes each (pane content abstract, chrome on the wall plane); crop brackets cascade (siblings 45ms, rows 250ms).
+- **Signature:** "No window needed." — all 40 panes shed tab + URL bars and keep working as lit outlines while the room dims to night.
+- **Audio:** A major, 98 BPM; drums enter with the grid, drop for the night, return for the P.S. −14.02 LUFS · −1.50 dBTP.

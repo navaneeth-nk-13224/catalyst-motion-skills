@@ -4,7 +4,7 @@ The script-freshness gate (`script-freshness.md`) reads this file. Append one en
 - **Benched:** used in either of the last 2 films. It can't be the opening, the closing or the hero line.
 - **Retired:** used in 3 or more films. Not used at all until 3 films pass without it.
 
-Last 2 films: **Progressive Zoho MCP v2, Catalyst Functions**.
+Last 2 films: **Functions 30s, SmartBrowz 30s**.
 
 ## Status
 | Pattern | Films | Status |
@@ -20,19 +20,23 @@ Last 2 films: **Progressive Zoho MCP v2, Catalyst Functions**.
 | "X. Then Y." twist opener ("…in minutes. Then the back end takes weeks.") | CloudScale 2, Slate 30s | Available (last used 3 films ago) |
 | Second-person "Your ___" opener | CloudScale 2, Slate 30s, Stratus manifesto, Stratus corporate | **Retired** |
 | 6 lines, one feature per line | CloudScale 1, CloudScale 2, Slate 30s, AppSail, Stratus manifesto, Stratus corporate, Stratus One file | **Retired** as the default structure |
-| "This is one file." (demonstrative, object-led opener) | Stratus One file | Benched |
-| Callback ending ("One file, or millions.") | Stratus One file | Benched |
+| "This is one file." (demonstrative, object-led opener) | Stratus One file | Available |
+| Callback ending ("One file, or millions.") | Stratus One file | Available |
 | Numbered benefits read in order (01 / 02 / 03) | Stratus corporate | Available |
 | "Start free with five gigabytes." CTA line | Stratus corporate | Available |
 | "Only the required tools. Every action, completed." (fragment ending) | Progressive MCP | Available |
 | Problem → solution narrated over fixed user timestamps | Progressive MCP | Available |
-| First person — the product speaks ("Until someone calls, I don't exist.") | Catalyst Functions | Benched |
-| "Call me…" repetition at line starts | Catalyst Functions | Benched |
-| Command ending as a callback ("So go on. Call me.") | Catalyst Functions | Benched |
-| Code line as the silent opening (sound first) | Catalyst Functions | Benched |
+| First person — the product speaks ("Until someone calls, I don't exist.") | Catalyst Functions | Available |
+| "Call me…" repetition at line starts | Catalyst Functions | Available |
+| Command ending as a callback ("So go on. Call me.") | Catalyst Functions | Available |
+| Code line as the silent opening (sound first) | Catalyst Functions | Available |
 | "Your code. Infinite possibilities." (fragment ending) | Functions 30s | Benched |
 | "Introducing Zoho Catalyst ___." reveal line | Functions 30s | Benched |
 | "___ deserves a faster way to run." opener | Functions 30s | Benched |
+| Letter / note voice mode ("Dear browser," salutation opening) | SmartBrowz 30s | Benched |
+| "P.S." ending line ("P.S. Use as many of you as it takes.") | SmartBrowz 30s | Benched |
+| Escalating errand list (each request bigger than the last) | SmartBrowz 30s | Benched |
+| "No window needed." · "Read it anyway." | SmartBrowz 30s | Benched |
 
 ## Entries (last 3 films; older ones in `copy-ledger-archive.md`)
 ### Stratus corporate
@@ -77,3 +81,10 @@ Last 2 films: **Progressive Zoho MCP v2, Catalyst Functions**.
 - **Ending:** "Zoho Catalyst Functions. Your code. Infinite possibilities." (spoken name ending, kept by user brief)
 - **Device:** one object's birth and life.
 - **Phrases:** "deploy in seconds" · "let Catalyst handle the infrastructure" · "without managing servers" · "focus on what matters". On screen: "Scales as you grow." · "No servers to manage." · "Build faster."
+
+### SmartBrowz 30s (`outputs/smartbrowz 30s/`)
+- **Mode:** letter / note (a developer's note to the browser), Kokoro af_heart @1.05.
+- **Opening:** "Dear browser," (salutation)
+- **Ending:** "P.S. Use as many of you as it takes." (a P.S.; name on screen only)
+- **Device:** escalation of requests. 6 lines, 1 silent beat 4.6s.
+- **Phrases:** "Forty stores changed their prices overnight. Check every one." · "Make me a PDF by morning." · "The old portal has no API. Read it anyway." · "No window needed. I'll be asleep." On screen: "Reads any page a person can." · "Headless browsers, in parallel."
