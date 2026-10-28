@@ -60,5 +60,6 @@ their request. Continue here only if they insist. After delivering a film, remin
   between parts, scale). Code, UI, type, numbers and single objects go flat front-on; schedules and timelines go plan view.
   Iso in at most half the scenes, at least 2 non-iso scenes per film; name each scene's view in the storyboard.
 - **No captions.** Ever.
+- **Use the official logo animations** in `catalyst-assets/logo-animations/` (dark-BG lockup for end cards). Permanent brand files: never redraw, recolour or retime them. See `catalyst-assets/README.md`.
 - **Authorities:** LottieFiles `motion-design` → `catalyst-motion` (style, relevance, freshness, ledger) → `catalyst-film` (story, scripts, production).
 - **Don't change pinned versions** (`bin/toolchain.json`, `bin/requirements.lock`, `package-lock.json`) unless asked. They keep the look and sound consistent across machines.

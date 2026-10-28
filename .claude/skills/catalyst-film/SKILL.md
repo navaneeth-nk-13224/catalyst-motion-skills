@@ -52,6 +52,7 @@ Code: read **only** `template/KIT.md` — never open the kit sources (`kit.tsx`,
 - **Type 1** (ambient iso system) for important features; **Type 2** (UI assembly: frame → build ≤2.5s → resolve → hold ≥1.5s) for small ones.
 - Easing `(0.4,0,0.2,1)`; enter `(0,0,0.2,1)`; exit `(0.4,0,1,1)` 30–50% shorter. Durations 350/500/800ms. Stagger < 500ms per group (two-speed cascade: 33–50ms siblings, ~300ms groups). 0% overshoot except 5% on one success moment.
 - Layers per scene: primary verb · secondary reaction (10–30%, +100–300ms) · ambient (10–20%).
+- **Logo = the official animation, never redrawn.** End card: `catalyst-assets/logo-animations/catalyst-lockup-animation-darkBG.json` (light BG → `catalyst-lockup-animation.json`; mark only → `catalyst-logo-animation.json`). How: `catalyst-assets/README.md`.
 
 ## Layouts and transitions
 L1 split (max 1/film) · L2 mirror split · L3 centre stage · L4 type as stage (160–240px) · L5 headline over panorama ·
