@@ -7,6 +7,7 @@
   ./film mix        duck + loudnorm → outputs/<film>/build/audio/mix.wav      (skipped if inputs unchanged)
   ./film stills     self-review stills + sheet → build/review/stills/  [frames…]  (skipped if no visual change)
   ./film keystills  <frames…> the 7–8 key stills + sheet → outputs/<film>/preview/ (stage 8b; only this writes preview/)
+  ./film layout     [frames…] [--step=0.25] clear-space check in numbers (text vs art, cards, text; margins) — no images
   ./film look       <frame> [x y w h] [+ <frame> [x y w h] …] → ONE small review image (several crops tiled 2-up)
   ./film log        append ledger.md (this film's rows + entries) to both ledgers; rolls "Last 2 films" + Benched → Available
   ./film render     the ONE deliverable: outputs/<film>/<slug>.mp4 (git-ignored)  (skipped if picture + mix unchanged)
@@ -126,6 +127,8 @@ def stage(name):
         if not frame_args():
             sys.exit("usage: ./film keystills <frame> <frame> …   (the 7–8 most important moments)")
         cached("keystills", digest(visual_key(), ROOT / "scripts/stills.mjs", *frame_args()), lambda: (sh("node", "scripts/stills.mjs", "--key", *frame_args()), stamp(PREVIEW)), [PREVIEW / "sheet.png"])
+    elif name == "layout":  # fast, prints ✓/✗ lines; run before any stills round (not cached: it is the report)
+        sh("node", "scripts/layout.mjs", *frame_args(), *[a for a in args[1:] if a.startswith("--step=")])
     elif name == "look":  # one small review image (crops and/or downscale) instead of reading full-size stills
         specs = [[int(v) for v in part.split() if v.lstrip("-").isdigit()] for part in " ".join(args[1:]).split("+")]
         if not specs or any(len(n) not in (1, 5) for n in specs):

@@ -2,7 +2,7 @@ import React from "react";
 import { interpolate } from "remotion";
 import { EDGE } from "./iso";
 import { EASE } from "./motion";
-import { ACCENT, C, FONT } from "./theme";
+import { ACCENT, C, FONT, heading } from "./theme";
 
 /* Shared SUPPORTING pieces (timing, type entrances, cards, routing, a light thread, chip, meter).
  * They are never a scene's hero: hero objects and new primitives are drawn fresh per film in src/art.tsx
@@ -44,7 +44,44 @@ export const card = (r: Rect, extra: React.CSSProperties = {}): React.CSSPropert
 export const clearRight = (outline: [number, number][], gap = 56) => Math.max(...outline.map((q) => q[0])) + gap;
 /** x for a right-aligned label to the left of an object (label's right edge). */
 export const clearLeft = (outline: [number, number][], gap = 56) => Math.min(...outline.map((q) => q[0])) - gap;
+/** y for a label above an object (the label's bottom edge) / below it (its top edge). */
+export const clearAbove = (outline: [number, number][], gap = 56) => Math.min(...outline.map((q) => q[1])) - gap;
+export const clearBelow = (outline: [number, number][], gap = 56) => Math.max(...outline.map((q) => q[1])) + gap;
 export const CLEAR = { art: 56, text: 40 };
+
+// ── design system: spacing, type ramp, hierarchy (use these instead of ad-hoc numbers; placement stays free) ──
+/** Every gap comes from this scale. text/art are the clear-space minimums; margin is the safe area (≥ 96). */
+export const SPACE = { xs: 8, s: 16, m: 24, text: 40, art: 56, margin: 120 } as const;
+/** Safe area for type (giant type may bleed only in L4). */
+export const SAFE: Rect = { x: SPACE.margin, y: SPACE.margin, w: 1920 - 2 * SPACE.margin, h: 1080 - 2 * SPACE.margin };
+/** The type ramp by role (1080p, Zoho Puvi). Pick a role, not a size: ≤ 3 roles per frame, one headline or display. */
+export const TYPE = {
+  eyebrow: { fontFamily: FONT, fontWeight: 600, fontSize: 18, lineHeight: 1.2, letterSpacing: "0.08em", textTransform: "uppercase", color: C.muted },
+  label: { fontFamily: MONO, fontSize: 24, lineHeight: 1.3, color: C.muted },
+  sub: { fontFamily: FONT, fontWeight: 400, fontSize: 32, lineHeight: 1.35, letterSpacing: "-0.01em", color: C.muted },
+  title: heading(56),
+  headline: heading(80),
+  display: heading(180),
+  number: { ...heading(260), lineHeight: 1, fontVariantNumeric: "tabular-nums" },
+} satisfies Record<string, React.CSSProperties>;
+
+const ANCHOR = { tl: [0, 0], tr: [-100, 0], bl: [0, -100], br: [-100, -100], l: [0, -50], r: [-100, -50], c: [-50, -50] } as const;
+/** One text unit (eyebrow → headline → sub …): children stacked with rhythm gaps, the stack's `anchor` corner at (x, y).
+ *  gap = one value or one per gap (default eyebrow-style [s, m, m…] when `eyebrow`, else m). Marked data-block, so
+ *  ./film layout checks it as one block. Children keep their own entrance styles (rise / enter). */
+export const Stack: React.FC<{
+  x: number; y: number; anchor?: keyof typeof ANCHOR; align?: "left" | "center" | "right"; width?: number;
+  gap?: number | number[]; eyebrow?: boolean; style?: React.CSSProperties; children: React.ReactNode;
+}> = ({ x, y, anchor = "tl", align = "left", width, gap, eyebrow = false, style, children }) => {
+  const items = React.Children.toArray(children);
+  const gapAt = (i: number) => (Array.isArray(gap) ? gap[i] ?? gap[gap.length - 1] : gap ?? (eyebrow && i === 0 ? SPACE.s : SPACE.m));
+  const [ax, ay] = ANCHOR[anchor];
+  return (
+    <div data-block style={{ position: "absolute", left: x, top: y, width, textAlign: align, transform: `translate(${ax}%, ${ay}%)`, ...style }}>
+      {items.map((child, i) => <div key={i} style={{ marginTop: i ? gapAt(i - 1) : 0 }}>{child}</div>)}
+    </div>
+  );
+};
 
 // ── routing on the screen's iso axes ────────────────────────────────────────────────────────────────────
 type Pt = [number, number];

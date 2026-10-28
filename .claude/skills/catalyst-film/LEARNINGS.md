@@ -16,6 +16,7 @@ Add to this file whenever a film teaches something new.
 - **No captions, ever.** Not burned in, not as `.srt`. On-screen type carries the key words; the VO carries the rest. *(Stratus corporate)*
 - **Visuals must be literally relevant.** If someone in the product's category can't name the hero object without labels in about 2 seconds, it's the wrong object. Abstract stacked slabs, plain cubes and lattices are not "object storage". See `catalyst-motion/create/relevance.md`. *(Stratus corporate)*
 - **Clean clear space, always.** Text must never touch or overlap art and must keep generous whitespace: ≥ 56px from any solid's real outline (side faces included), cables and cards; ≥ 40px between text blocks. v2's panel labels were measured from the front face, so the side face swallowed the gap; tool chips sat on cables. Measure from the projected outline, or move the label into the card it describes. *(Progressive MCP v2, user)*
+- **Dress the cards.** Bare rounded boxes with a label and a muted line read as wireframes. Every meaningful card gets ≥ 2 structure details (icon header, divider, port, skeleton bars, dot grid) and one light treatment by state (idle border · working comet looping the border · done gradient rim). See `catalyst-motion/dna/visual-aesthetics.md` §5. *(Functions Run 35s, user)*
 - **The voice must sound human.** Kokoro `af_heart` replaced the macOS voices. *(v2)*
 
 ## Script and voice
@@ -59,6 +60,7 @@ Add to this file whenever a film teaches something new.
 
 ## Tooling
 - **Fresh session per film, measured:** the same v2 film cost 8.8M tokens processed in a long session (≈395K re-read per request) and 4.5M in a fresh one (≈117K). The test session still opened the kit sources despite KIT.md, and every full-size still it read stayed in context (47K → 165K) → KIT.md now carries every signature and skeleton, and stills are reviewed with `film.py look` crops. *(token test)*
+- **Clear space in numbers, not pictures:** `./film layout` measures the DOM (text vs SVG outlines, cards, text; occlusion and card containment handled) and prints ✓/✗. Tested on SmartBrowz v2 and Progressive MCP v2: it caught a cursor sitting on "Place order" and a 31px eyebrow-to-list gap that still rounds had passed. Image rounds are for look, not for measuring. *(token research)*
 - **Token budget (after Progressive MCP, 158K):** start from `SKILL.md` (digest) and `template/KIT.md`; open deep rule files only when a gate fails; read only the ledgers' status tables; never re-read an old film's code or `synth.py`. Start a **fresh session per film** — a long session re-reads its whole history every turn. Keep the stills rounds: they prevent re-renders. *(token audit)*
 - The Remotion **Node API ignores `remotion.config.ts`**. Pass `rspack: true` to `bundle()` (and any other config) explicitly, or the scripts silently differ from the CLI. *(pipeline audit)*
 - Render concurrency above 8 gains nothing on this machine (150 frames: 10.2s at 8 vs 10.3s at 14). Rendering isn't CPU-bound, so leave it at 8. *(pipeline audit)*

@@ -119,6 +119,19 @@ Rules: negative tracking everywhere except eyebrows; sentence case headlines; ca
 - **Grid:** ~1280px container, 80px gutters; section padding `clamp(60px, 10.5vw, 150px)`; heading-to-content gap `clamp(40px, 5vw, 72px)`.
 - **Radii:** 4px buttons/inputs · 8–10px cards & windows · 22px / full for pills. Nothing bubbly.
 - **Cards:** `#0D0D0D` fill, 1px `#303030` border, no shadow. Numbered cards split by a 1px rule with a gradient numeral below.
+- **Cards in films are dressed, never bare (user rule).** A flat rounded box with a label and a muted line reads as a wireframe
+  (Functions Run 35s, flow close-up). Every card that carries meaning gets **structure + one light treatment**:
+  - **Structure (≥ 2 per card):** a header row with a 24px line icon (1.2px stroke) for what the card *is* · a 1px `#252525`
+    divider under the header · a port: a 6–8px socket on the edge where a line attaches, which brightens when light arrives · secondary
+    content as 4px skeleton bars or 5px dots, with only the key string real · a faint inner dot grid (12px pitch, ≤ 6% white)
+    or a 1px top-edge highlight that fades out by mid-width.
+  - **Light (one per card, by state):** *idle*: plain `#303030` border. *Working*: a short comet of light (15–25% of the perimeter,
+    gradient head, fading tail) loops around the border, 2.5–4s per lap, eased steady, never bouncing. *Done*: the comet settles into a static
+    1px accent-gradient rim (the pricing rim) plus a soft static glow whose **opacity** fades in. Never animate blur or shadow size.
+  - **Restraint:** at most 2 cards looping light at once; the rest idle or done. No rim on every card, no coloured fills, no drop shadows,
+    no neon outer glow > 20% opacity. The loop follows the card's own corners (the light turns where the border turns), so it reads as
+    the card working, not as decoration.
+  - Text stays ≥ 56px from the border light only when the light leaves the card. On the border itself it counts as the card (handled by `./film layout`).
 - **Section texture:** faint dot grid (~12px pitch, low-alpha gray) inside bordered containers.
 - **Buttons:** primary = solid `#E42527`, 4px radius, `16px 32–48px` padding, caps; ghost = 1px white border; text link = white with 1px underline.
 - **Tabs:** full-width row, active tab gets the 1px accent-gradient border.

@@ -4,7 +4,7 @@ The script-freshness gate (`script-freshness.md`) reads this file. Append one en
 - **Benched:** used in either of the last 2 films. It can't be the opening, the closing or the hero line.
 - **Retired:** used in 3 or more films. Not used at all until 3 films pass without it.
 
-Last 2 films: **SmartBrowz 30s, SmartBrowz 30s v2**.
+Last 2 films: **QuickML 30s, AppSail Enterprise 30s**.
 
 ## Status
 | Pattern | Films | Status |
@@ -33,14 +33,33 @@ Last 2 films: **SmartBrowz 30s, SmartBrowz 30s v2**.
 | "Your code. Infinite possibilities." (fragment ending) | Functions 30s | Available |
 | "Introducing Zoho Catalyst ___." reveal line | Functions 30s | Available |
 | "___ deserves a faster way to run." opener | Functions 30s | Available |
-| Letter / note voice mode ("Dear browser," salutation opening) | SmartBrowz 30s | Benched |
-| "P.S." ending line ("P.S. Use as many of you as it takes.") | SmartBrowz 30s | Benched |
-| Escalating errand list (each request bigger than the last) | SmartBrowz 30s | Benched |
-| "No window needed." · "Read it anyway." | SmartBrowz 30s | Benched |
-| First person (product) voice mode: SmartBrowz as "I" | SmartBrowz 30s v2 | Benched |
-| Countdown device: each line opens on a clock time ("Eight forty." · "Eight fifty-five.") | SmartBrowz 30s v2 | Benched |
-| Number opening "Eight o'clock." · callback command ending "Nine. Open the doors." | SmartBrowz 30s v2 | Benched |
-| "Nobody watched. Everything passed." · on screen "Real browsers. Nobody at the screen." | SmartBrowz 30s v2 | Benched |
+| Letter / note voice mode ("Dear browser," salutation opening) | SmartBrowz 30s | Available |
+| "P.S." ending line ("P.S. Use as many of you as it takes.") | SmartBrowz 30s | Available |
+| Escalating errand list (each request bigger than the last) | SmartBrowz 30s | Available |
+| "No window needed." · "Read it anyway." | SmartBrowz 30s | Available |
+| First person (product) voice mode: SmartBrowz as "I" | SmartBrowz 30s v2 | Available |
+| Countdown device: each line opens on a clock time ("Eight forty." · "Eight fifty-five.") | SmartBrowz 30s v2 | Available |
+| Number opening "Eight o'clock." · callback command ending "Nine. Open the doors." | SmartBrowz 30s v2 | Available |
+| "Nobody watched. Everything passed." · on screen "Real browsers. Nobody at the screen." | SmartBrowz 30s v2 | Available |
+| Mostly silent voice mode (2 spoken lines; sound first, silence + logo at the end) | SmartBrowz 30s v3 | Available |
+| Sound-first opening: keys typing, no voice for 4.9s | SmartBrowz 30s v3 | Available |
+| Callback device: spoken "Four lines of logic" → giant on-screen "Four lines." before the logo | SmartBrowz 30s v3 | Available |
+| "A browser in the cloud does the clicking." · "The grid makes room." · on screen "A browser for every region." | SmartBrowz 30s v3 | Available |
+| Letter / note voice mode: a "Note to self" read aloud | Functions Run 35s | Available |
+| Salutation opening "Note to self." · P.S. ending "P.S. It's already running." | Functions Run 35s | Available |
+| Giant single-word on-screen hook "run." landing on the spoken word | Functions Run 35s | Available |
+| "No server to name. Just a function." · "Anything can wake it. Even the clock." · "On a busy day, it copies itself." | Functions Run 35s | Available |
+| Triplet "Check, charge, invoice." · on screen "Your code. / Infinite possibilities." (user's text) | Functions Run 35s | Available |
+| Narrator (user script) opening on a question "What if your AI agent could do more than just write code?" | Catalyst Agents 30s | Available |
+| Triplet close "Less setup. Faster development. You're always in control." + spoken "Zoho Catalyst. From prompt to production." | Catalyst Agents 30s | Available |
+| "With Agent Skills, your AI understands the platform. With MCP, it takes action." (repetition pair) | Catalyst Agents 30s | Available |
+| Narrator (user script) opening on a question "What if building machine learning models didn't require writing a single line of code?" | QuickML 30s | Benched |
+| "Meet Catalyst QuickML. Your no-code machine learning platform." · "Just machine learning, made simple." + spoken "Catalyst QuickML." close | QuickML 30s | Benched |
+| Verb triplets "Import / clean and transform / build" · "Train, evaluate, and deploy" | QuickML 30s | Benched |
+| Letter / memo voice mode: salutation opening "To the platform team. Subject: the Spring app from 2014." | AppSail Enterprise 30s | Benched |
+| P.S. ending "P.S. It bills by usage, down to the minute." (brand on screen only) | AppSail Enterprise 30s | Benched |
+| "Good news. AppSail takes it whole" · "No servers to patch. No pager at three a.m. Fully managed." | AppSail Enterprise 30s | Benched |
+| On-screen tagline "Run the enterprise on AppSail." | AppSail Enterprise 30s | Benched |
 
 ## Entries (last 3 films; older ones in `copy-ledger-archive.md`)
 ### Stratus corporate
@@ -99,3 +118,37 @@ Last 2 films: **SmartBrowz 30s, SmartBrowz 30s v2**.
 - **Ending:** "Nine. Open the doors." (a command + callback to the clock; name on screen only)
 - **Device:** countdown. 6 lines, 1 silent beat 4.7s.
 - **Phrases:** "So I run it. Chrome and Firefox, two hundred at once." · "A coupon for every customer, from one template." · "A screenshot of every page, for the record." · "Nobody watched. Everything passed." On screen: "Sale opens 9:00" · "Real browsers. Nobody at the screen." · "Doors open." 
+
+### SmartBrowz 30s v3 (`outputs/smartbrowz 30s v3/`)
+- **Mode:** mostly silent (2 narrated lines, af_heart @1.05); type and sound carry the rest.
+- **Opening:** sound first — typing ticks over four code lines, no voice until 4.9s.
+- **Ending:** silence and the logo, after the on-screen callback "Four lines."
+- **Device:** callback. 2 lines, 3 silent beats (4.9s, 11.5s, 7.8s).
+- **Phrases:** "Four lines of logic. A browser in the cloud does the clicking." · "Every region wants its own copy by Monday. The grid makes room." · on screen "Headless · Chrome, in the cloud", "Screenshots", "Browser Grid · A browser for every region.", "Four lines.", "SmartBrowz".
+
+### Functions Run 35s (`outputs/Functions Run 35s/`)
+- **Mode:** letter / note (a developer's note to self), af_heart @1.05.
+- **Opening:** salutation "Note to self. Write it once, and let it run."
+- **Ending:** P.S. "P.S. It's already running." · on-screen "Your code. / Infinite possibilities." then the lockup.
+- **Device:** triplet ("Check, charge, invoice."). 7 lines, 1 silent beat (15.4–20.1s, 4.7s).
+- **Phrases:** "No server to name. Just a function." · "Push the Node code. Two seconds later, it's live." · "Anything can wake it. Even the clock." · "On a busy day, it copies itself." · "Inside, only your logic."
+
+### Catalyst Agents 30s (`outputs/catalyst-agents-30s/`)
+- **Mode:** narrator (user-supplied script, verbatim).
+- **Opening:** a question.
+- **Ending:** spoken product name + tagline "From prompt to production." (user script; conflicts with the retired spoken-name ending, kept per user rule).
+- **Device:** triplet + "With X, … With Y, …" repetition. 5 lines, 0 silent beats ≥ 2.5s.
+- **Phrases:** "agent-ready, full-stack cloud platform" (retired phrase, user script), "Create databases, configure services, deploy applications, all from a simple prompt."
+
+### QuickML 30s (`outputs/QuickML 30s/`)
+- **Mode:** narrator (user script, verbatim).
+- **Opening:** question. **Ending:** "No complex coding. Just machine learning, made simple. Catalyst QuickML." (product name spoken last; user's choice).
+- **Device:** verb triplets. 5 lines, no silent beat ≥ 2.5 s (user timings).
+- **Phrases:** "no-code machine learning platform", "from raw data to real-world predictions", "machine learning, made simple".
+
+### AppSail Enterprise 30s (`outputs/appsail enterprise 30s/`)
+- **Mode:** letter / memo read aloud (af_heart 1.05×), simple mode table.
+- **Opening:** salutation + subject line.
+- **Ending:** a P.S.; brand name and tagline on screen only.
+- **Device:** sustained memo metaphor (To / Subject / P.S.). 5 lines, 1 silent beat (end card 25.7–30s).
+- **Phrases:** "takes it whole", "Monday's traffic hits", "No pager at three a.m.", "down to the minute".

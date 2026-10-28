@@ -19,8 +19,13 @@ p, cid, slug = sys.argv[1:]
 tl = json.load(open(p)); tl["id"], tl["slug"] = cid, slug
 json.dump(tl, open(p, "w"), indent=2); open(p, "a").write("\n")
 PY
-# node_modules: APFS clone from any existing film (instant), else npm ci
-SRC=$(find "$PROJECT" -maxdepth 4 -type d -name node_modules -path "*/video/node_modules" -not -path "$DEST/*" 2>/dev/null | head -1)
+# node_modules: APFS clone (instant) from an existing film built from the SAME package-lock.json, else npm ci
+# (an older film's node_modules can miss packages the template added since, e.g. @remotion/lottie)
+SRC=""
+for nm in $(find "$PROJECT" -maxdepth 4 -type d -name node_modules -path "*/video/node_modules" -not -path "$DEST/*" 2>/dev/null | tr ' ' '\001'); do
+  nm=$(printf '%s' "$nm" | tr '\001' ' ')
+  if cmp -s "$(dirname "$nm")/package-lock.json" "$SKILL/template/package-lock.json"; then SRC="$nm"; break; fi
+done
 if [ -n "$SRC" ]; then cp -c -R "$SRC" "$DEST/video/" 2>/dev/null || cp -R "$SRC" "$DEST/video/"; else (cd "$DEST/video" && npm ci --silent); fi
 sed "s/{{SLUG}}/$SLUG/g; s/{{ID}}/$ID/g; s#{{FOLDER}}#$FOLDER#g" "$SKILL/story/brief-template.md" > "$DEST/$SLUG-brief.md"
 (cd "$DEST/video" && npx tsc --noEmit) && echo "✓ outputs/$FOLDER/video ready · brief: outputs/$FOLDER/$SLUG-brief.md"
