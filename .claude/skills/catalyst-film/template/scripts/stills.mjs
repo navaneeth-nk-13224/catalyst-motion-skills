@@ -1,7 +1,10 @@
-// Review stills + contact sheet from ONE bundle and ONE browser (vs. one `remotion still` per frame).
+// Stills + contact sheet from ONE bundle and ONE browser (vs. one `remotion still` per frame).
 //   node scripts/stills.mjs                 → auto frames: entry, middle and hold of every scene + last frame
 //   node scripts/stills.mjs 60 240 610      → specific frames
-// Output: outputs/<film>/preview/f<frame>.png + sheet.png (4 columns) — the key stills the user approves. Uses the shipped props.
+//   --key   → outputs/<film>/preview/ (the key stills the user approves)
+//   default → outputs/<film>/build/review/stills/ (self-review; never touches preview/)
+//   --keep  → don't clear the folder first (single frames for ./film look)
+// Output: f<frame>.png + sheet.png (4 columns). Uses the shipped props.
 import { bundle } from "@remotion/bundler";
 import { openBrowser, renderStill, selectComposition } from "@remotion/renderer";
 import { execFileSync } from "node:child_process";
@@ -13,8 +16,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const tl = JSON.parse(readFileSync(path.join(root, "src/timeline.json"), "utf8"));
 let project = root;
 while (!existsSync(path.join(project, ".claude/skills/catalyst-film")) && path.dirname(project) !== project) project = path.dirname(project);
-const outDir = path.join(path.dirname(root), "preview"); // outputs/<film>/preview
-rmSync(outDir, { recursive: true, force: true });
+const flags = process.argv.slice(2).filter((a) => a.startsWith("--"));
+const film = path.dirname(root); // outputs/<film>
+const outDir = flags.includes("--key") ? path.join(film, "preview") : path.join(film, "build/review/stills");
+if (!flags.includes("--keep")) rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 
 const fps = tl.fps;

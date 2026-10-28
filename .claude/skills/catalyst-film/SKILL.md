@@ -31,18 +31,18 @@ Code: read **only** `template/KIT.md` — never open the kit sources (`kit.tsx`,
 | # | Stage | Do | Gate |
 |---|---|---|---|
 | 0 | Start | `sh .claude/skills/catalyst-film/bin/start.sh` — ONE call: doctor + KIT.md + both ledgers' Benched/Retired rows + script-freshness. Don't open those files separately | `✓ ready to build` |
-| 1 | Research | Product page (or the user's reference): real names, numbers | Every claim traceable, or "my wording" in brief §6 |
+| 1 | Research | Product page (or the user's reference): real names, numbers. Same product filmed before → reuse that brief's §1 (`outputs/*/*-brief.md`) instead of fetching again | Every claim traceable, or "my wording" in brief §6 |
 | 2 | Scaffold | `sh .claude/skills/catalyst-film/bin/new-film.sh "<folder>" <CompId> <slug>` (also runs the film doctor) | tsc clean · `✓ doctor` |
 | 3 | Story | Core idea (1 sentence) · arc picked from the material | Every link *but/therefore* · ending rhymes with opening · arc ≠ last film (ledger) |
 | 4 | Script | `vo[]` + cuts in `src/timeline.json`; `./film check` | No ✗ slot; ~2.1 words/s of runtime; script freshness ✓ |
 | 5 | Voice | `./film vo` then `./film words` | Measured check passes; overruns → show numbers, user chooses (longer · trim · ≤1.1×) |
 | 6 | Storyboard | Brief §4 + `src/cues.json` (events pinned to VO words) | Layout rhythm · freshness · relevance (below) |
 | 7 | **Show the user** | Script + storyboard | Approved |
-| 8 | Build | `src/art.tsx` (new primitives) + `src/Film.tsx`; `./film stills <frames>`; review lean (below), fix, repeat | Stills checklist (below) |
-| 8b | **Key stills** | 7–8 most important moments → `outputs/<film>/preview/`, open, wait | **User approves** |
-| 9 | Sound | Write `audio-src/make_sound.py` (score only; library is `synth.py`); `./film sound`, `./film mix` | −14 LUFS ±0.5 · TP ≤ −1 dBTP |
-| 10 | Render + verify | `./film render`, `./film verify` | ALL PASS |
-| 11 | Log | Append the film to both ledgers (status table rows + one entry); fill brief §5–7 | `verify` shows ✓ ledger_entry |
+| 8 | Build | `src/art.tsx` (new primitives) + `src/Film.tsx`; `./film stills [frames]` (→ `build/review/stills/`); review lean (below), fix, repeat | Stills checklist (below) |
+| 8b | **Key stills** | `./film keystills <7–8 frames>` → `outputs/<film>/preview/` (only this writes preview/), `open`, wait | **User approves** |
+| 9 | Sound | Write `audio-src/make_sound.py` (score only; library is `synth.py`), then **one call:** `./film sound && ./film mix && ./film render && ./film verify` | −14 LUFS ±0.5 · TP ≤ −1 dBTP |
+| 10 | Render + verify | (in the stage-9 call) | ALL PASS |
+| 11 | Log | Fill `video/ledger.md` (rows + entries; format is in the stub) and brief §5–7, then `./film log && ./film verify` in one call — it rolls "Last 2 films" and moves stale Benched rows to Available | `verify` shows ✓ ledger_entry |
 
 ## Look and motion (catalyst-motion DNA)
 - `#000` void, no perspective, no camera rotation. Dark matte solids, 1px gradient edges.
@@ -52,7 +52,7 @@ Code: read **only** `template/KIT.md` — never open the kit sources (`kit.tsx`,
 - **Type 1** (ambient iso system) for important features; **Type 2** (UI assembly: frame → build ≤2.5s → resolve → hold ≥1.5s) for small ones.
 - Easing `(0.4,0,0.2,1)`; enter `(0,0,0.2,1)`; exit `(0.4,0,1,1)` 30–50% shorter. Durations 350/500/800ms. Stagger < 500ms per group (two-speed cascade: 33–50ms siblings, ~300ms groups). 0% overshoot except 5% on one success moment.
 - Layers per scene: primary verb · secondary reaction (10–30%, +100–300ms) · ambient (10–20%).
-- **Logo = the official animation, never redrawn.** End card: `catalyst-assets/logo-animations/catalyst-lockup-animation-darkBG.json` (light BG → `catalyst-lockup-animation.json`; mark only → `catalyst-logo-animation.json`). How: `catalyst-assets/README.md`.
+- **Logo = the official animation, never redrawn.** End card: `<EndLockup at={s} />` from `src/EndLockup.tsx` (template ships it, `@remotion/lottie` pinned) plays `catalyst-lockup-animation-darkBG.json` (`light` → the light-BG lockup). Leave **≥ 3.0s from `at` to the film's end** (rests at +2.0s, hold ≥ 1s) — plan it in the cuts.
 
 ## Layouts and transitions
 L1 split (max 1/film) · L2 mirror split · L3 centre stage · L4 type as stage (160–240px) · L5 headline over panorama ·
@@ -74,8 +74,8 @@ L6 lower third · L7 no type · L8 diagonal · L9 annotated world · L10 window 
 - Kokoro `af_heart` @1.05: ~2.9 words/s inside a line; slot = words/2.9 + 0.4s. Punctuation directs pauses. "back end" not "backend"; brand words checked with phonemes. Name lists → on-screen highlights on each name, not staggers.
 
 ## Reviewing stills lean (images stay in the context and are re-read every turn)
-- Per review round: read **one** contact sheet (`preview/sheet.png`, 480px tiles). For detail use `./film look <frame> [x y w h]` (a crop or a ≤ 1000px downscale), never a full-size still.
-- Crop only the areas you are checking (labels, transitions, clear space). Several checks → one `look` crop each, or one composite you build with ffmpeg; never re-read images you already checked.
+- Per review round: read **one** contact sheet (`build/review/stills/sheet.png`, 480px tiles). For detail use `./film look <frame> [x y w h]` (a crop or a ≤ 1000px downscale), never a full-size still.
+- Crop only the areas you are checking (labels, transitions, clear space). Several checks → **one** call and one image: `./film look 330 1000 280 400 220 + 735 300 240 1500 420 + 875` (tiled 2-up; re-renders frames older than the code). Never re-read images you already checked.
 - The user's key stills are opened **for the user** (`open`); don't read them again unless a fix needs re-checking.
 
 ## Build lessons (stills checklist + traps)

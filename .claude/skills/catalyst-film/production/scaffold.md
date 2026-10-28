@@ -13,7 +13,9 @@ sh .claude/skills/catalyst-film/bin/new-film.sh "<folder>" <CompositionId> <slug
 ./film vo         # Kokoro → dur + word timestamps (cached)
 ./film words      # every VO word with its film-clock time → pin cues in src/cues.json
 # … build src/art.tsx + src/Film.tsx with cue()/word() …
-./film stills     # stills + sheet → outputs/<film>/preview/ (one bundle)   [frames…]
+./film stills     # self-review stills + sheet → build/review/stills/ (one bundle)   [frames…]
+./film look 330 + 610 960 200 640 420   # several crops → ONE review image
+./film keystills 100 205 …   # the 7–8 key stills → outputs/<film>/preview/ (stage 8b)
 # … write make_sound.py (score + SFX only) with CUE()/WORD() …
 ./film sound      # score + SFX (cached)
 ./film mix        # ducking + two-pass loudnorm (cached)
@@ -39,6 +41,8 @@ sh .claude/skills/catalyst-film/bin/new-film.sh "<folder>" <CompositionId> <slug
 | `scripts/film.py` | Stage runner with content-hash cache (`outputs/<film>/build/state.json`) |
 | `scripts/timeline_tools.py` | `check` · `word()` / `cue()` resolvers |
 | `scripts/stills.mjs` | Review stills from one bundle and one browser, with auto frames per scene, plus the contact sheet |
+| `scripts/ledger_log.py` · `ledger.md` | `./film log`: appends `ledger.md` (this film's rows + entries) to both ledgers, rolls "Last 2 films", Benched → Available |
+| `src/EndLockup.tsx` | `<EndLockup at />`: the official lockup Lottie (`public/brand/`), via pinned `@remotion/lottie` |
 | `scripts/render.mjs` | One render: the final film with the full mix (no captions). Removes any stray variants from `outputs/<film>/`. |
 | `scripts/verify.py` | Spec, duration, loudness and peak of the one deliverable; single-deliverable rule; VO words; ledger entry → `outputs/<film>/build/review/verify.json` |
 

@@ -27,5 +27,6 @@ def slug():
 # Generated media (mp4, preview/, build/) is git-ignored; the brief and code are tracked.
 OUTPUTS = FILM_DIR
 BUILD = OUTPUTS / "build"
-PREVIEW = OUTPUTS / "preview"
+PREVIEW = OUTPUTS / "preview"          # key stills the user approves (./film keystills)
+REVIEW_STILLS = OUTPUTS / "build/review/stills"  # self-review stills (./film stills)
 VO_DIR, AUDIO_DIR = BUILD / "vo", BUILD / "audio"

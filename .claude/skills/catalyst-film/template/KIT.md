@@ -87,6 +87,17 @@ Instruments: `pad_voice(fr, d)` · `pluck(fr, d=0.45, bright=1)` · `bass(fr, d)
 helpers `hz("D#4")` · `t_axis(s)` · `lp(x, cutoff)` · `band(x, lo, hi)` · `fade(x, a, r)` · `chord(notes, t0, d, g=0.38, cutoff=1700)`.
 Typing ticks: `CUE(start) + dur * (np.arccos(1 - 2*k/n) / np.pi)`, so ticks follow the eased curve.
 
+## `src/EndLockup.tsx` (end card)
+`<EndLockup at={seconds} width?={760} light?>`: the official lockup Lottie (928×244 → `width`), its own 30 fps timing, starts at `at`.
+Draws on, rests from `at + 2.0`; leave **≥ 3.0s from `at` to the last cut**. Centre it; type below it ≥ 56px away, entering after `at + 2.0`.
+
+## Project contract (don't open Root/index to check)
+- `Root.tsx` registers `Film` (export from `src/Film.tsx`, props `{ audio?: string }`) with id, fps, size and duration from `timeline.json` (duration = last cut).
+- `timeline.json`: `cuts` (s, last = film length) · `scenes[{name}]` (one per cut gap) · **one voice** (`voice`, `speed`) for every `vo[]` line — dialogue needs a second voice in `kokoro_vo.py` (not supported yet; pick another mode).
+- Logos and brand files: `public/brand/` (`logo-catalyst-dark.svg`, both lockup JSONs). Fonts load from `theme.ts`.
+
 ## Scripts
-`./film check | vo | words | sound | mix | stills [frames…] | look <frame> [x y w h] | render | verify | doctor | all` (cached on inputs).
-`look` writes one small review image (crop and/or downscale) to `outputs/<film>/build/review/`; review with it instead of reading full-size stills.
+`./film check | vo | words | sound | mix | stills [frames…] | keystills <frames…> | look … | render | verify | log | doctor | all` (cached on inputs).
+- `stills` → self-review stills + sheet in `build/review/stills/`. `keystills` → the user's 7–8 key stills in `preview/` (the only writer of preview/).
+- `look <frame> [x y w h] [+ <frame> [x y w h] …]` → ONE small review image (several crops tiled 2-up) in `build/review/`; re-renders frames older than the code.
+- `log` → appends `video/ledger.md` to both ledgers (stage 11). After key-stills approval run `./film sound && ./film mix && ./film render && ./film verify` as one call.

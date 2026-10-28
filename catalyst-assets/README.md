@@ -16,7 +16,6 @@ blue bottom. In the lockups the mark then slides left and scales 130% → 100% (
 
 ## Using it in a film
 - Dark background (every film) → `catalyst-lockup-animation-darkBG.json`. Light background → `catalyst-lockup-animation.json`.
-- Copy the file into `outputs/<film>/video/public/brand/` and play it with `@remotion/lottie`, scaled uniformly,
-  centred, never cropped, ≥ 56px clear space around it. `@remotion/lottie` is not in the template's pinned
-  `package.json` yet: adding it (same version as `remotion`) changes the lockfile, so ask the user first.
+- The template ships both lockups in `public/brand/` and `src/EndLockup.tsx` (`<EndLockup at={s} />`, `@remotion/lottie@4.0.539` pinned):
+  scaled uniformly, centred, never cropped, ≥ 56px clear space around it. Leave ≥ 3.0s from `at` to the end of the film.
 - Let the lottie's own timing run at 30 fps; don't retime, recolour or add effects to it.

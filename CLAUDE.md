@@ -28,9 +28,9 @@ their request. Continue here only if they insist. After delivering a film, remin
    - Story, then the script. The script goes through the freshness gate (`script-freshness.md` + `copy-ledger.md`).
    - Storyboard, then **show the script and storyboard and wait for approval**.
 4. **Show sample images.** Build the scenes (stage 8), then render 7–8 key stills of the most important moments
-   (`./film stills <frames>` → `outputs/<folder>/preview/`). Open them and **wait for approval** (stage 8b).
-5. **Build with every rule below.** Sound, mix, render, verify (stages 9–10). Verify must say ALL PASS.
-   Then log the film in both ledgers (stage 11).
+   (`./film keystills <frames>` → `outputs/<folder>/preview/`). Open them and **wait for approval** (stage 8b).
+5. **Build with every rule below.** Sound, mix, render, verify (stages 9–10) in one call. Verify must say ALL PASS.
+   Then log the film in both ledgers with `./film log` (stage 11).
 6. **Store it in its own folder under `outputs/`.** Everything for the film ends up in `outputs/<folder>/`: brief, `video/` code,
    `<slug>.mp4`, `preview/` and `build/`. Give the user the path to the `.mp4`.
 
@@ -46,7 +46,7 @@ their request. Continue here only if they insist. After delivering a film, remin
   forced rebuilds (`./film all --force`, `render`). Setup, docs, skill and config work never needs a render. If a
   change would require re-rendering, say so and ask first; re-rendering replaces the previous video in `outputs/`.
 - **Show key stills before the final render.** After the script and storyboard are approved and the scenes are built,
-  render 7–8 stills of the film's most important moments (`./film stills <frames>`), save them to
+  render 7–8 stills of the film's most important moments (`./film keystills <frames>`), save them to
   `outputs/<film>/preview/`, open them, and wait for approval. Only then do sound, mix and the final render.
 - **Fresh words, not just fresh pictures.** Before writing any script, read `catalyst-film/story/script-freshness.md` and
   `story/copy-ledger.md`. Rotate the voice mode, opening, ending and device; no benched or retired phrases; run the swap test.
