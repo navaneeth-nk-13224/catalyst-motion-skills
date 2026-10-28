@@ -8,7 +8,7 @@ Composition `{{ID}}` · project `outputs/{{FOLDER}}/video` · deliverable `outpu
 - **Real names and numbers used:** (agents, frameworks, components, free-tier figures, verbatim lines)
 - **Site issues spotted:** (copy bugs, outdated lists; report them, don't use them)
 
-## 2. Story (step 2 · `story/arcs.md`)
+## 2. Story (step 2 · `story/arcs.md`) — simple mode: "see table in §3"
 ```
 Core idea : <one sentence a viewer could repeat>
 Arc       : <shape or blend> — why THIS material has this shape; differs from the last film's arc? (ledger)
@@ -16,7 +16,7 @@ Turns     : beat1 → BUT/THEREFORE → beat2 → …
 Rhyme     : how the ending answers the opening
 ```
 
-## 3. Script (step 3 · word budget ~2.1 w/s of runtime)
+## 3. Script (step 3 · word budget ~2.1 w/s of runtime) — simple mode: paste the approved Time · Voiceover · Motion table here
 | # | Cut | Beat | VO line | On-screen type (key words only) |
 |---|---|---|---|---|
 
@@ -32,10 +32,10 @@ Copy ledger check : no benched/retired phrases as opening, closing or hero line 
 Swap test         : every line belongs to this film ✓
 ```
 
-### Key stills (before sound and the final render)
+### Key stills (advanced mode only; simple mode: "skipped")
 7–8 stills of the most important moments → `outputs/<film>/preview/` → approved by the user on: <date>
 
-## 4. Storyboard (step 4 · `story/storyboard-template.md`, `catalyst-motion`)
+## 4. Storyboard (step 4 · `story/storyboard-template.md`, `catalyst-motion`) — simple mode: "see table in §3"; freshness block still filled
 **Metaphor:**
 **Layout rhythm:** L? → L? → … (no repeats; ≤ 1 split per 4 scenes; giant-type + quiet scenes; wide + close-up)
 **Transitions:** (≤ every other cut a plain slide)

@@ -41,7 +41,10 @@ export const Film: React.FC<{ audio?: string }> = ({ audio = "" }) => {
 | `Thread` | `<Thread path draw opacity? head?>`: light line drawn 0..1; head born → travels → dissolves (SVG) |
 | `Chip` | `<Chip name light x y w? size? opacity? scale? hot?>`: mono tag centred on x,y; `hot` → ember |
 | `Meter` | `<Meter value w h? ember?>`: accent-gradient bar (DOM) |
-| `clearRight`, `clearLeft`, `CLEAR` | `(outlinePts, gap = 56) → x`; `CLEAR = {art: 56, text: 40}` (clear-space rule) |
+| `clearRight`, `clearLeft`, `clearAbove`, `clearBelow`, `CLEAR` | `(outlinePts, gap = 56) → x` (label's left / right edge) or `→ y` (label's bottom / top edge); `CLEAR = {art: 56, text: 40}` |
+| `SPACE`, `SAFE` | `{xs 8, s 16, m 24, text 40, art 56, margin 120}`: every gap comes from it · `SAFE` = the 120px safe-area `Rect` |
+| `TYPE` | roles → CSS: `eyebrow` 18 caps · `label` 24 mono · `sub` 32 muted · `title` 56 · `headline` 80 · `display` 180 · `number` 260. Pick a role, not a size; ≤ 3 roles a frame, one headline/display (other display sizes: `heading(160–240)`) |
+| `Stack` | `<Stack x y anchor?="tl"\|"tr"\|"bl"\|"br"\|"l"\|"r"\|"c" align? width? gap?={n \| n[]} eyebrow?>{lines}</Stack>`: one text unit with rhythm gaps (eyebrow → 16 → headline → 24 → sub), `data-block` for `./film layout`; lines keep their own `rise`/`enter` |
 | `MONO` | `"'SF Mono', Menlo, monospace"` |
 
 ## `src/theme.ts`
@@ -97,7 +100,8 @@ Draws on, rests from `at + 2.0`; leave **≥ 3.0s from `at` to the last cut**. C
 - Logos and brand files: `public/brand/` (`logo-catalyst-dark.svg`, both lockup JSONs). Fonts load from `theme.ts`.
 
 ## Scripts
-`./film check | vo | words | sound | mix | stills [frames…] | keystills <frames…> | look … | render | verify | log | doctor | all` (cached on inputs).
+`./film check | vo | words | sound | mix | layout [frames…] | stills [frames…] | keystills <frames…> | look … | render | verify | log | doctor | all` (cached on inputs).
 - `stills` → self-review stills + sheet in `build/review/stills/`. `keystills` → the user's 7–8 key stills in `preview/` (the only writer of preview/).
+- `layout [frames…] [--step=0.25]` → clear-space ✓/✗ in numbers (text vs art/cards/text, clipped headlines), no images; exit 1 on ✗. Opt-outs in film code: `data-block` (one unit), `data-layout="ignore"` (ambient art behind type). `Root.tsx` mounts `LayoutProbe` only for this.
 - `look <frame> [x y w h] [+ <frame> [x y w h] …]` → ONE small review image (several crops tiled 2-up) in `build/review/`; re-renders frames older than the code.
 - `log` → appends `video/ledger.md` to both ledgers (stage 11). After key-stills approval run `./film sound && ./film mix && ./film render && ./film verify` as one call.

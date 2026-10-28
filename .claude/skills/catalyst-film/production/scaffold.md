@@ -14,6 +14,7 @@ sh .claude/skills/catalyst-film/bin/new-film.sh "<folder>" <CompositionId> <slug
 ./film words      # every VO word with its film-clock time → pin cues in src/cues.json
 # … build src/art.tsx + src/Film.tsx with cue()/word() …
 ./film stills     # self-review stills + sheet → build/review/stills/ (one bundle)   [frames…]
+./film layout                            # clear space in numbers (✓/✗, no images) — before any stills round
 ./film look 330 + 610 960 200 640 420   # several crops → ONE review image
 ./film keystills 100 205 …   # the 7–8 key stills → outputs/<film>/preview/ (stage 8b)
 # … write make_sound.py (score + SFX only) with CUE()/WORD() …

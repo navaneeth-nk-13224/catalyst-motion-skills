@@ -2,7 +2,7 @@
 
 Append one entry per finished film; newest at the bottom. The freshness gate (`create/freshness.md`) reads this.
 **Benched** = used in either of the last 2 films. **Retired** = used in 3+ films (no hero use until 3 films pass without it).
-Last 2 films: **SmartBrowz 30s, SmartBrowz 30s v2**.
+Last 2 films: **QuickML 30s, AppSail Enterprise 30s**.
 
 ## Status (update after each film)
 | Motif | Films | Status |
@@ -75,20 +75,48 @@ Last 2 films: **SmartBrowz 30s, SmartBrowz 30s v2**.
 | Instance field: one object copied into a diamond grid on iso axes | Functions 30s | Available |
 | Chain of functions on one iso axis, lighting in order | Functions 30s | Available |
 | Flat brace glyphs closing around giant end-card type | Functions 30s | Available |
-| Room corner lined with two iso walls of browser panes (Browser Grid ×40) | SmartBrowz 30s | Benched |
-| Crop brackets of light snapping onto regions (main light carrier) | SmartBrowz 30s | Benched |
-| Browser chrome peeling off every pane → bare lit pages (headless, signature) | SmartBrowz 30s | Benched |
-| Store page close-up with a price flipping + window dealing into copies | SmartBrowz 30s | Benched |
-| Screenshot thumbnails flying into a PDF report page | SmartBrowz 30s | Benched |
-| Legacy portal read by a light ruler; rows lift into clean cards | SmartBrowz 30s | Benched |
-| Giant ×N counter with a row of window glyphs filling | SmartBrowz 30s | Benched (giant number counter: 3 films → **Retired**) |
-| Checkout form close-up with a dashed "untested" Place-order button (hero; returns proven at the end) | SmartBrowz 30s v2 | Benched |
-| Automation cursor of light with a short trail, clicking two browser windows at once (main light carrier) | SmartBrowz 30s v2 | Benched |
-| Plan-view run board: 200 swimlanes of 4 step marks, one stalls in ember and reruns (signature) | SmartBrowz 30s v2 | Benched |
-| Coupon template with dashed {slots} → fanned stack of filled PDF coupons | SmartBrowz 30s v2 | Benched |
-| Iso open file folder; screenshot frames drop in with a shutter flash + timestamped page list | SmartBrowz 30s v2 | Benched |
-| Plan-view hour ruler (8:00 → 9:00) with three work tracks and a playhead | SmartBrowz 30s v2 | Benched |
-| Clock chip counting down across scenes (counter hand-off) | SmartBrowz 30s v2 | Benched |
+| Room corner lined with two iso walls of browser panes (Browser Grid ×40) | SmartBrowz 30s | Available |
+| Crop brackets of light snapping onto regions (main light carrier) | SmartBrowz 30s | Available |
+| Browser chrome peeling off every pane → bare lit pages (headless, signature) | SmartBrowz 30s | Available |
+| Store page close-up with a price flipping + window dealing into copies | SmartBrowz 30s | Available |
+| Screenshot thumbnails flying into a PDF report page | SmartBrowz 30s | Available |
+| Legacy portal read by a light ruler; rows lift into clean cards | SmartBrowz 30s | Available |
+| Giant ×N counter with a row of window glyphs filling | SmartBrowz 30s | Available (giant number counter: 3 films → **Retired**) |
+| Checkout form close-up with a dashed "untested" Place-order button (hero; returns proven at the end) | SmartBrowz 30s v2 | Available |
+| Automation cursor of light with a short trail, clicking two browser windows at once (main light carrier) | SmartBrowz 30s v2 | Available |
+| Plan-view run board: 200 swimlanes of 4 step marks, one stalls in ember and reruns (signature) | SmartBrowz 30s v2 | Available |
+| Coupon template with dashed {slots} → fanned stack of filled PDF coupons | SmartBrowz 30s v2 | Available |
+| Iso open file folder; screenshot frames drop in with a shutter flash + timestamped page list | SmartBrowz 30s v2 | Available |
+| Plan-view hour ruler (8:00 → 9:00) with three work tracks and a playhead | SmartBrowz 30s v2 | Available |
+| Clock chip counting down across scenes (counter hand-off) | SmartBrowz 30s v2 | Available |
+| Code editor close-up: four typed Puppeteer lines → shrinks to a "running" chip | SmartBrowz 30s v3 | Available |
+| Headless dashboard page assembling with no browser chrome (Week/Month toggle pressed by light) | SmartBrowz 30s v3 | Available |
+| Dashed page-break lines of light slicing a tall web page into three numbered PDF sheets (signature, main light carrier) | SmartBrowz 30s v3 | Available |
+| Viewport triptych (desktop · tablet · phone) with the page reflowed and a shutter flash per frame | SmartBrowz 30s v3 | Available |
+| Iso row of server racks whose 1U units light with browser glyphs; two racks rise in (auto-scale) | SmartBrowz 30s v3 | Available |
+| f(x) card with an edge-to-edge channel groove that light runs through (hero; one shared element split → code face → plan view) | Functions Run 35s | Available |
+| Hook underline of light under a giant word that runs off the edge and becomes the card's channel (main light carrier; returns on the end card) | Functions Run 35s | Available |
+| H-tree division: iso card splits along alternating axes into 128 copies, leaving an H-shaped light trail; camera auto-fits (signature) | Functions Run 35s | Available |
+| Plan-view trigger lanes: Run pill, HTTP chip, event chip and a cron ruler with ticks feeding one bus into the card | Functions Run 35s | Available |
+| Card face opening into a Node.js editor with a deploy rail (the channel) filling to "Deployed · 2.1s" | Functions Run 35s | Available |
+| Iso field of 128 copies, each pulsing its channel on its own rhythm, push-in into one copy | Functions Run 35s | Available |
+| Flat order-flow close-up: validate → charge → invoice / notify branch, nodes lit by a line of light, re-lit on spoken words | Functions Run 35s | Available |
+| Agent chat whose code block morphs into the working app it wrote (signature, shared element) | Catalyst Agents 30s | Available |
+| Iso infrastructure pieces (data table · compute chip · file stack · hosted page) docking around the official logo mark, linked to a light ring | Catalyst Agents 30s | Available |
+| Mirror-split cards: Agent Skills rows lit by side markers → "Understand", MCP tool rows with meters → "Execute" | Catalyst Agents 30s | Available |
+| Prompt bar → four service tiles that dock as the app window's sidebar (tile → nav row morph) | Catalyst Agents 30s | Available |
+| App window carried across a cut with an "Approve" deploy bar lit by light | Catalyst Agents 30s | Available |
+| Code editor whose lines collapse into skeleton bars that dock as drag-and-drop canvas blocks (signature, shared element) | QuickML 30s | Benched |
+| Classified scatter plot (dots tint teal / coral after a light regression line draws) beside giant product type | QuickML 30s | Benched |
+| Self-cleaning dataset table: null cells fill, a light band normalizes a column, then the table shrinks into the first pipeline node | QuickML 30s | Benched |
+| Pipeline node row with ports, a pulse lighting each node's rim in turn; last node morphs into the training card | QuickML 30s | Benched |
+| Training card: epoch counter + gradient accuracy curve + dashed loss, metric meters; Deploy button → progress → "Live" endpoint card | QuickML 30s | Benched |
+| Raw record cards routed on a right-angle bus into a prediction dashboard (risk meters, KPI counters) | QuickML 30s | Benched |
+| Memo card typing To/Subject with an attachment chip that morphs into a container image card and docks into an AppSail instance card (signature, shared element) | AppSail Enterprise 30s | Benched |
+| Iso rack server units with front LED load meters; row scales 1 → 4 off a load-balancer bus whose brightness follows traffic | AppSail Enterprise 30s | Benched |
+| Plan-view ops week track: hatched patch windows and ember alert pins fade off, one gradient uptime line draws Mon → Sun | AppSail Enterprise 30s | Benched |
+| P.S. usage card: GB-minute counter + per-minute histogram lit left → right in the accent gradient | AppSail Enterprise 30s | Benched |
+| Card rim states: comet looping the border while working → static gradient rim when done (every card) | AppSail Enterprise 30s | Benched |
 
 ## Entries (last 3 films; older ones in `ledger-archive.md`)
 ### Stratus corporate 30s (`outputs/stratus corporate/`)
@@ -174,3 +202,43 @@ Last 2 films: **SmartBrowz 30s, SmartBrowz 30s v2**.
 - **Signature:** 200 checkouts run in silence; one stalls in ember, the cursor drops on it, it reruns, the board settles.
 - **End card:** official dark-BG lockup Lottie via `@remotion/lottie@4.0.539` (added to this film only); film runs 31s so the lockup holds ≥1s.
 - **Audio:** E minor, 104 BPM; beat-tick clock pulse; drums drop for the silent board. −14.01 LUFS · −1.51 dBTP.
+
+### SmartBrowz 30s v3 (`outputs/smartbrowz 30s v3/`)
+- **Arc:** one object, many forms — one web page → PDF pages → screenshots at three sizes → a copy per region; callback "Four lines." Views: flat · flat · flat · flat · iso · flat (iso 1/6).
+- **UI:** code editor `browserLogic.js` (typed, gutter run marker) → running chip; weekly-sales dashboard page with KPI tiles, bar chart, Week/Month toggle; viewport frames.
+- **Type 1:** tall page broken along A4 page breaks into PDF sheets; iso server-rack row filling unit by unit.
+- **Layouts:** L13 → L3 → L7 → L11 → L5 → L4. Transitions: shared element (card → chip) · shared element (page lengthens) · plain slide · pull-out · pull-out + type hand-off.
+- **Signature:** in silence, one long web page breaks into three numbered PDF pages along two dashed lines of light.
+- **Audio:** C# minor, 96 BPM; −14.01 LUFS · −1.48 dBTP.
+
+### Functions Run 35s (`outputs/Functions Run 35s/`)
+- **Arc:** from the user's shot list: hook → reveal → code → triggers → divide → scale → inside → end card. Views: flat, flat, flat, plan, iso, iso, flat, flat (iso 2/8).
+- **UI:** card face opens into a Node.js editor + deploy rail; plan-view trigger chips and cron ruler; order-flow node cards.
+- **Type 1:** H-tree division of thin iso f(x) cards into a 16×8 field, each card's channel pulsing on its own rhythm.
+- **Layouts:** L4 type as stage → L1 split → L13 window close-up → L9 annotated plan → L3 centre → L7 no type (wide) → L13 close-up → L3 end card. Transitions: line hand-off, shared-element morph ×2, crossfade, continuous pull-out, push-in, type hand-off.
+- **Signature:** the card divides along alternating iso axes, the H-shaped trail growing with each split (8 copies at 18.9s, 128 at 20.3s).
+- **Audio:** B minor → D major, 108 BPM; −14.01 LUFS · −1.45 dBTP.
+
+### Catalyst Agents 30s (`outputs/catalyst-agents-30s/`)
+- **Arc:** user script: question → reveal → two capabilities → prompt builds the app → control + end card. Views: flat · iso · flat · flat · flat (iso 1/5).
+- **UI:** agent chat with typed prompt and code block; task-tracker app; Skills/MCP cards; prompt bar; sidebar app with an Approve bar.
+- **Type 1:** iso data table, compute chip, file stack, hosted page around a floor light ring (scene 2).
+- **Layouts:** L3 → L3 + lower title → L2 mirror split → L9 annotated UI → L1 split → end card. Transitions: shared-element morph (code → app), push-out, crossfade, tile → sidebar morph, window carried across a cut.
+- **Signature:** the agent's code block grows into the running app.
+- **Audio:** F# major, 112 BPM; −14.02 LUFS · −1.42 dBTP.
+
+### QuickML 30s (`outputs/QuickML 30s/`)
+- **Arc:** user script: question → reveal → workflow (data → pipeline → train/eval/deploy) → payoff (predictions) → lockup. Views: all flat/front-on (iso 0/5: UI-led product, no depth idea).
+- **UI:** editor → pipeline canvas, customers.csv table, node row, training card, deploy card, prediction dashboard; comet while working, gradient rim when done.
+- **Type 1:** none (Type 2 film by design; data elements = scatter plot + routed record bus).
+- **Layouts:** L10 window centre → L4 type as stage + chart → L3 table → L9 node row → L1 split → L3 dashboard → end lockup. Transitions: scale-fade, crossfade, shared element (Train node → training card), pull-out.
+- **Signature:** code lines dissolve into bars that dock as drag-and-drop blocks; one block is dragged into place.
+- **Audio:** D major, 116 BPM; −14.02 LUFS · −1.50 dBTP.
+
+### AppSail Enterprise 30s (`outputs/appsail enterprise 30s/`)
+- **Arc:** memo → takes it whole → scales out → fully managed → P.S. (callback to the memo). Views: flat · flat · iso · plan · flat (iso 1/5).
+- **UI:** memo card, container image card (layers + digest), AppSail instance card (slot, runtime chips, Running row), ops-week card, P.S. usage card.
+- **Type 1:** rack server units with LED load meters; load-balancer bus whose brightness = load.
+- **Layouts:** L3 centre stage → L10/L1-ish card + headline left → L9 annotated world (type bottom-right) → L4 type as stage over a plan track → L3 P.S. card → end lockup. Transitions: shared-element morph (chip → image card → slot), instance card shrinks into server 1, slide, push-out fade.
+- **Signature:** the memo's .jar attachment becomes an OCI image card and docks into the AppSail instance.
+- **Audio:** D# minor, 100 BPM; −14.02 LUFS · −1.51 dBTP.
