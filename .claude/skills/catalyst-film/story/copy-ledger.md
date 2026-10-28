@@ -4,7 +4,7 @@ The script-freshness gate (`script-freshness.md`) reads this file. Append one en
 - **Benched:** used in either of the last 2 films. It can't be the opening, the closing or the hero line.
 - **Retired:** used in 3 or more films. Not used at all until 3 films pass without it.
 
-Last 2 films: **Functions 30s, SmartBrowz 30s**.
+Last 2 films: **SmartBrowz 30s, SmartBrowz 30s v2**.
 
 ## Status
 | Pattern | Films | Status |
@@ -30,13 +30,17 @@ Last 2 films: **Functions 30s, SmartBrowz 30s**.
 | "Call me…" repetition at line starts | Catalyst Functions | Available |
 | Command ending as a callback ("So go on. Call me.") | Catalyst Functions | Available |
 | Code line as the silent opening (sound first) | Catalyst Functions | Available |
-| "Your code. Infinite possibilities." (fragment ending) | Functions 30s | Benched |
-| "Introducing Zoho Catalyst ___." reveal line | Functions 30s | Benched |
-| "___ deserves a faster way to run." opener | Functions 30s | Benched |
+| "Your code. Infinite possibilities." (fragment ending) | Functions 30s | Available |
+| "Introducing Zoho Catalyst ___." reveal line | Functions 30s | Available |
+| "___ deserves a faster way to run." opener | Functions 30s | Available |
 | Letter / note voice mode ("Dear browser," salutation opening) | SmartBrowz 30s | Benched |
 | "P.S." ending line ("P.S. Use as many of you as it takes.") | SmartBrowz 30s | Benched |
 | Escalating errand list (each request bigger than the last) | SmartBrowz 30s | Benched |
 | "No window needed." · "Read it anyway." | SmartBrowz 30s | Benched |
+| First person (product) voice mode: SmartBrowz as "I" | SmartBrowz 30s v2 | Benched |
+| Countdown device: each line opens on a clock time ("Eight forty." · "Eight fifty-five.") | SmartBrowz 30s v2 | Benched |
+| Number opening "Eight o'clock." · callback command ending "Nine. Open the doors." | SmartBrowz 30s v2 | Benched |
+| "Nobody watched. Everything passed." · on screen "Real browsers. Nobody at the screen." | SmartBrowz 30s v2 | Benched |
 
 ## Entries (last 3 films; older ones in `copy-ledger-archive.md`)
 ### Stratus corporate
@@ -88,3 +92,10 @@ Last 2 films: **Functions 30s, SmartBrowz 30s**.
 - **Ending:** "P.S. Use as many of you as it takes." (a P.S.; name on screen only)
 - **Device:** escalation of requests. 6 lines, 1 silent beat 4.6s.
 - **Phrases:** "Forty stores changed their prices overnight. Check every one." · "Make me a PDF by morning." · "The old portal has no API. Read it anyway." · "No window needed. I'll be asleep." On screen: "Reads any page a person can." · "Headless browsers, in parallel."
+
+### SmartBrowz 30s v2 (`outputs/smartbrowz 30s v2/`)
+- **Mode:** first person (product: SmartBrowz speaks as "I"), Kokoro af_heart @1.05.
+- **Opening:** "Eight o'clock. The sale opens at nine, and nobody has tested checkout." (a number)
+- **Ending:** "Nine. Open the doors." (a command + callback to the clock; name on screen only)
+- **Device:** countdown. 6 lines, 1 silent beat 4.7s.
+- **Phrases:** "So I run it. Chrome and Firefox, two hundred at once." · "A coupon for every customer, from one template." · "A screenshot of every page, for the record." · "Nobody watched. Everything passed." On screen: "Sale opens 9:00" · "Real browsers. Nobody at the screen." · "Doors open." 

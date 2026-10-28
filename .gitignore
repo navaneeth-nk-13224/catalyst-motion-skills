@@ -16,3 +16,7 @@ node_modules/
 .DS_Store
 *.log
 **/film.lock.json
+
+# ── claude.ai skill exports (Catalyst Studio for Claude Motion): local only, not part of this repo ──
+claude-ai-skills/
+*.zip

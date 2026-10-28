@@ -2,7 +2,7 @@
 
 Append one entry per finished film; newest at the bottom. The freshness gate (`create/freshness.md`) reads this.
 **Benched** = used in either of the last 2 films. **Retired** = used in 3+ films (no hero use until 3 films pass without it).
-Last 2 films: **Functions 30s, SmartBrowz 30s**.
+Last 2 films: **SmartBrowz 30s, SmartBrowz 30s v2**.
 
 ## Status (update after each film)
 | Motif | Films | Status |
@@ -67,14 +67,14 @@ Last 2 films: **Functions 30s, SmartBrowz 30s**.
 | Order notification firing an event line that wakes the function | Catalyst Functions | Available |
 | Instance fan (iso grid of function replicas spreading by rings) + log counter to 1,000,000 | Catalyst Functions | Available |
 | Braces sliding shut into a spark (signature) + compute-time readout freezing | Catalyst Functions | Available |
-| Extruded iso curly braces `{ }` as the function, real code etched between them | Functions 30s | Benched |
-| Code lines lighting top → bottom as execution (main light carrier) | Functions 30s | Benched |
-| Code lifting off an editor into a 3D object (affine morph, signature) | Functions 30s | Benched |
-| Editor + `catalyst deploy` terminal strip with a seconds counter | Functions 30s | Benched (monospace terminal now 3 films → **Retired**) |
-| Trigger cards column (On demand · API · Event · Schedule) threading into one input | Functions 30s | Benched |
-| Instance field: one object copied into a diamond grid on iso axes | Functions 30s | Benched |
-| Chain of functions on one iso axis, lighting in order | Functions 30s | Benched |
-| Flat brace glyphs closing around giant end-card type | Functions 30s | Benched |
+| Extruded iso curly braces `{ }` as the function, real code etched between them | Functions 30s | Available |
+| Code lines lighting top → bottom as execution (main light carrier) | Functions 30s | Available |
+| Code lifting off an editor into a 3D object (affine morph, signature) | Functions 30s | Available |
+| Editor + `catalyst deploy` terminal strip with a seconds counter | Functions 30s | Available (monospace terminal itself stays **Retired**) |
+| Trigger cards column (On demand · API · Event · Schedule) threading into one input | Functions 30s | Available |
+| Instance field: one object copied into a diamond grid on iso axes | Functions 30s | Available |
+| Chain of functions on one iso axis, lighting in order | Functions 30s | Available |
+| Flat brace glyphs closing around giant end-card type | Functions 30s | Available |
 | Room corner lined with two iso walls of browser panes (Browser Grid ×40) | SmartBrowz 30s | Benched |
 | Crop brackets of light snapping onto regions (main light carrier) | SmartBrowz 30s | Benched |
 | Browser chrome peeling off every pane → bare lit pages (headless, signature) | SmartBrowz 30s | Benched |
@@ -82,6 +82,13 @@ Last 2 films: **Functions 30s, SmartBrowz 30s**.
 | Screenshot thumbnails flying into a PDF report page | SmartBrowz 30s | Benched |
 | Legacy portal read by a light ruler; rows lift into clean cards | SmartBrowz 30s | Benched |
 | Giant ×N counter with a row of window glyphs filling | SmartBrowz 30s | Benched (giant number counter: 3 films → **Retired**) |
+| Checkout form close-up with a dashed "untested" Place-order button (hero; returns proven at the end) | SmartBrowz 30s v2 | Benched |
+| Automation cursor of light with a short trail, clicking two browser windows at once (main light carrier) | SmartBrowz 30s v2 | Benched |
+| Plan-view run board: 200 swimlanes of 4 step marks, one stalls in ember and reruns (signature) | SmartBrowz 30s v2 | Benched |
+| Coupon template with dashed {slots} → fanned stack of filled PDF coupons | SmartBrowz 30s v2 | Benched |
+| Iso open file folder; screenshot frames drop in with a shutter flash + timestamped page list | SmartBrowz 30s v2 | Benched |
+| Plan-view hour ruler (8:00 → 9:00) with three work tracks and a playhead | SmartBrowz 30s v2 | Benched |
+| Clock chip counting down across scenes (counter hand-off) | SmartBrowz 30s v2 | Benched |
 
 ## Entries (last 3 films; older ones in `ledger-archive.md`)
 ### Stratus corporate 30s (`outputs/stratus corporate/`)
@@ -158,3 +165,12 @@ Last 2 films: **Functions 30s, SmartBrowz 30s**.
 - **Type 1:** room corner with two walls of 20 browser panes each (pane content abstract, chrome on the wall plane); crop brackets cascade (siblings 45ms, rows 250ms).
 - **Signature:** "No window needed." — all 40 panes shed tab + URL bars and keep working as lit outlines while the room dims to night.
 - **Audio:** A major, 98 BPM; drums enter with the grid, drop for the night, return for the P.S. −14.02 LUFS · −1.50 dBTP.
+
+### SmartBrowz 30s v2 (`outputs/smartbrowz 30s v2/`)
+- **Arc:** countdown to a deadline (8:00 → 9:00 before a sale). Views: flat · flat · plan · flat · iso · plan · flat (iso 1/7).
+- **UI:** checkout form (Runner 2, card fields, "Place order" dashed UNTESTED) · Chrome/Firefox windows with different tab shapes, one light cursor filling both · framework chips Playwright · Puppeteer · Selenium · coupon template {name}{code} → 6 filled PDF coupons · "Doors open." + "Order #1" button.
+- **Type 1:** plan-view run board (20 × 10 lanes, two-speed cascade 33ms / 300ms, one ember stall → rerun); iso open file folder of 8 screenshot frames; plan-view hour ruler with playhead.
+- **Layouts:** L13 → L2 → L7 → L3 → L9 → L5 → L4. Transitions: shared element (form → window) · camera rise · type hand-off · push-in · glide · rise.
+- **Signature:** 200 checkouts run in silence; one stalls in ember, the cursor drops on it, it reruns, the board settles.
+- **End card:** official dark-BG lockup Lottie via `@remotion/lottie@4.0.539` (added to this film only); film runs 31s so the lockup holds ≥1s.
+- **Audio:** E minor, 104 BPM; beat-tick clock pulse; drums drop for the silent board. −14.01 LUFS · −1.51 dBTP.
