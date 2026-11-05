@@ -66,6 +66,24 @@ Stages in *italics* are optional: keep them only if the material earns them.
 - **VO:** declarative and rhythmic, with parallel sentences ("Free bandwidth. Free collaborators. Free to grow.").
 - **Music:** a confident groove from the start, with a hit on each proof.
 
+### F. Feature overview (long-form) — *"here's what it does, how it works, and watch us build with it"*
+`Promise → What we'll build → Who it's for → Set it up → How it works → What else it's for → Build it (by hand) → Build it (with an agent) → How it fits → Try it`
+- **Best for:** a YouTube explainer for one Catalyst service, 3–6 minutes, for developers and AI-agent builders. First used for Data Streams (4:50); the team liked it, so it's the model for feature videos.
+- **Visual arc:** motion graphics *explain*, screen recordings *prove*.
+  - Open on a short animated promise: the feature's effect in one picture (Data Streams: a server push changes a browser page the instant it lands).
+  - Name two concrete apps up front and build both later. The promise is kept on screen.
+  - The console recording shows the real setup steps (create, configure access).
+  - A flat diagram builds the concept in the order a person needs it, with the VO naming each piece. No headings.
+  - A grid of other uses, each lit as it's named, widens the idea before the build.
+  - Build 1 by hand: the code recording held on the lines being explained, then the app running side by side for two or three users.
+  - Build 2 with an AI agent: setup at real speed (a viewer may follow along), the build fast-forwarded with holds on each result worth seeing, then the app running.
+  - End on how the pieces fit in one project (an architecture map that runs one real request), then the ways to try it.
+- **VO:** a recorded human voice, teaching tone, present tense over the recordings ("On the left, Sam is the scorer."). Signposting is fine here ("Let's quickly build…"). Keep every claim checked against the docs and the feature owner.
+- **Music:** none or very low; the voice and the product sounds carry it.
+- **Layouts:** animated scenes and full-frame recordings alternate, so it never reads as a slide deck or as a raw screencast.
+- **Production:** see `LEARNINGS.md` §Long-form and `production/thumbnail.md`.
+- **Watch out:** feature-owner tone, not hype. No "New" / "Introducing" if the release date is internal.
+
 ## 3. Making it organic (the rules that matter more than the shapes)
 1. **Write the script first, then name the arc.** Draft the VO as a story, then check which shape it has. Don't fill stages in order.
 2. **"But / therefore", never "and then".** Each beat must connect to the next with *but* (a turn) or *therefore* (a consequence). If two beats only join with *and then*, merge them or cut one.
@@ -95,6 +113,7 @@ Keep a blend to **two shapes at most**. Three is a montage.
 - So far:
   - CloudScale 2 = A
   - Slate 30s = A, with a Manifesto echo in its payoff
+  - Data Streams = F (long-form feature overview)
   - The next film should lean toward B, C, D or E unless the brief clearly calls for A.
 
 ## 6. Brief header (add to `<film>-script.md`)
