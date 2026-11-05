@@ -119,7 +119,11 @@ Rules: negative tracking everywhere except eyebrows; sentence case headlines; ca
 - **Grid:** ~1280px container, 80px gutters; section padding `clamp(60px, 10.5vw, 150px)`; heading-to-content gap `clamp(40px, 5vw, 72px)`.
 - **Radii:** 4px buttons/inputs · 8–10px cards & windows · 22px / full for pills. Nothing bubbly.
 - **Cards:** `#0D0D0D` fill, 1px `#303030` border, no shadow. Numbered cards split by a 1px rule with a gradient numeral below.
-- **Cards in films are dressed, never bare (user rule).** A flat rounded box with a label and a muted line reads as a wireframe
+- **Two kinds of box, two rules (user decision, 2026-11-05).** *Hero cards* are the subject of a scene: a window or panel,
+  ≤ 2 per frame, roughly ≥ 400px wide (editor, data table, training card, dashboard, deploy card). They are **dressed** (below).
+  *Tiles* are ≥ 3 same-type items shown together as a set: a grid, a list, chips, a row of pipeline nodes. They follow
+  **fewer boxes** (the next-but-one bullet). When unsure, ask "is this the thing the scene is about, or one of many?"
+- **Hero cards in films are dressed, never bare (user rule).** A flat rounded box with a label and a muted line reads as a wireframe
   (Functions Run 35s, flow close-up). Every card that carries meaning gets **structure + one light treatment**:
   - **Structure (≥ 2 per card):** a header row with a 24px line icon (1.2px stroke) for what the card *is* · a 1px `#252525`
     divider under the header · a port: a 6–8px socket on the edge where a line attaches, which brightens when light arrives · secondary
@@ -138,6 +142,11 @@ Rules: negative tracking everywhere except eyebrows; sentence case headlines; ca
 - **Inputs:** `#101010`/transparent fill, 1px `#303030`, 4px radius, `#A3A3A3` placeholder.
 
 ---
+
+- **Tiles: fewer boxes** (Data Streams use-cases grid review). No chip box behind an icon, no gradient or glow border, no
+  comet on any tile. At rest a tile has a 1px `#252525` border or none. Show focus by brightening the item itself: its icon takes
+  the accent gradient and its name goes white, while the other tiles dim to 40–60% opacity. Light that travels *between* tiles
+  (a thread into a node, a pulse along a row) is fine; it lands on the tile's port or icon, never as a rim around the tile.
 
 ## 6. Iconography
 

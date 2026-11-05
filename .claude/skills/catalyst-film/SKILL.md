@@ -94,7 +94,7 @@ L6 lower third · L7 no type · L8 diagonal · L9 annotated world · L10 window 
 - [ ] No wrapped/clipped headline (76–84px in ≥ 860px columns, or `nowrap`); labels in open space, never toward text
 - [ ] **Clear space:** `./film layout` says ✓ (re-run after any layout or camera change); crop only what it can't judge (glow bodies, art inside a Lottie or a raster)
 - [ ] Hero recognisable without labels; fills its zone; one hero per Type 1 scene
-- [ ] **Cards dressed, not bare (user rule):** each meaningful card has ≥ 2 structure details (icon header, divider, port, skeleton bars, dot grid) and one light treatment by state: idle border · working = comet looping the border (2.5–4s/lap, ≤ 2 at once) · done = static gradient rim + glow (opacity only). `catalyst-motion/dna/visual-aesthetics.md` §5
+- [ ] **Hero cards dressed, tiles bare (user rule).** Tiles (≥ 3 same-type items: grid, list, chips, node row) get no icon chips, rims, glows or comets; focus = brighten the item (gradient icon, white name), dim the rest. **Hero cards** (the scene's subject, ≤ 2 per frame) have ≥ 2 structure details (icon header, divider, port, skeleton bars, dot grid) and one light treatment by state: idle border · working = comet looping the border (2.5–4s/lap, ≤ 2 at once) · done = static gradient rim + glow (opacity only). `catalyst-motion/dna/visual-aesthetics.md` §5
 - [ ] View mix: iso in ≤ half the scenes; every iso scene needs depth to make its point; code/UI/type read flat
 - [ ] Transitions show content; every resolve on screen ≥ 0.7s before its exit
 - [ ] Thumbnail row doesn't look like one template; nothing benched/retired is a hero
