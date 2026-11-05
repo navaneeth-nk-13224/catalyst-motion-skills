@@ -10,6 +10,11 @@ holds other work (an earlier film, setup, docs, reports), don't start: say a new
 8.8M for the same film), ask them to open a new chat in this folder, and give them a ready-to-paste prompt containing
 their request. Continue here only if they insist. After delivering a film, remind them to start the next one in a new chat.
 
+## After every film: ask about the thumbnail (user rule)
+When the `.mp4` is delivered (verify ALL PASS, `./film log` done), always end by asking: **"Should I generate a thumbnail for this film?"**
+Don't make one unasked, and don't skip the question. On yes: follow `catalyst-film/production/thumbnail.md` (agree name, line, tag
+and hero in chat first, then build the `Thumbnail` still, export 2× to `outputs/<film>/<slug>-thumbnail-2x.png`). Same session, no film re-render.
+
 ## Two modes (user rule) — simple is the default
 - **Simple mode (default, always):** Claude writes the script as one **Time · Voiceover · Motion graphics** table
   (`catalyst-film/story/simple-script.md`; rows scale with length: 10s→2 · 15s→3 · 30s→5 · 60s→9–10). The table is the

@@ -23,6 +23,7 @@ Code: read **only** `template/KIT.md` — never open the kit sources (`kit.tsx`,
   (rows scale with length), shown for **one** approval, then the "Script given" run below. No story, no storyboard, no
   key-stills pause. **Advanced mode** = the full stage table below (stages 1–8b with both approvals), **only when the user
   says "advanced mode"**.
+- **After every film, ask: "Should I generate a thumbnail for this film?"** (every mode). Never make one unasked; on yes, `production/thumbnail.md` (content agreed in chat first, export 2×).
 - **Every film starts in a fresh chat session.** If this session already holds other work, don't start building: ask the user to open a new chat in this folder and give them a ready-to-paste prompt with their request. Continue here only if they insist. After delivering a film, remind them the next one belongs in a new chat. (A fresh session halved tokens: 4.5M vs 8.8M for the same film.)
 - **Same style, not exact copies.** Never re-render existing films to reproduce them.
 - **Never render or rebuild a video unless asked.** Setup, docs and config work never needs a render.

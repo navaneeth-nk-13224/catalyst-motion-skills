@@ -1,6 +1,6 @@
 # YouTube thumbnail
 
-Every film that goes to YouTube gets a thumbnail, made in the same Remotion project as a `<Still>` and exported as a PNG
+After every film is delivered, ask the user "Should I generate a thumbnail for this film?" and make one only on yes. A thumbnail is made in the same Remotion project as a `<Still>` and exported as a PNG
 into the film folder. Template: `template/src/Thumbnail.tsx` (registered as `Thumbnail` in `template/src/Root.tsx`).
 Worked example: `examples/thumbnail-datastreams.tsx` (the Data Streams thumbnail, 2026-11).
 
