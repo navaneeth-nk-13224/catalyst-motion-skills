@@ -2,7 +2,7 @@
 
 Append one entry per finished film; newest at the bottom. The freshness gate (`create/freshness.md`) reads this.
 **Benched** = used in either of the last 2 films. **Retired** = used in 3+ films (no hero use until 3 films pass without it).
-Last 2 films: **QuickML 30s, AppSail Enterprise 30s**.
+Last 2 films: **AppSail Enterprise 30s, Data Streams overview**.
 
 ## Status (update after each film)
 | Motif | Films | Status |
@@ -106,17 +106,26 @@ Last 2 films: **QuickML 30s, AppSail Enterprise 30s**.
 | Mirror-split cards: Agent Skills rows lit by side markers → "Understand", MCP tool rows with meters → "Execute" | Catalyst Agents 30s | Available |
 | Prompt bar → four service tiles that dock as the app window's sidebar (tile → nav row morph) | Catalyst Agents 30s | Available |
 | App window carried across a cut with an "Approve" deploy bar lit by light | Catalyst Agents 30s | Available |
-| Code editor whose lines collapse into skeleton bars that dock as drag-and-drop canvas blocks (signature, shared element) | QuickML 30s | Benched |
-| Classified scatter plot (dots tint teal / coral after a light regression line draws) beside giant product type | QuickML 30s | Benched |
-| Self-cleaning dataset table: null cells fill, a light band normalizes a column, then the table shrinks into the first pipeline node | QuickML 30s | Benched |
-| Pipeline node row with ports, a pulse lighting each node's rim in turn; last node morphs into the training card | QuickML 30s | Benched |
-| Training card: epoch counter + gradient accuracy curve + dashed loss, metric meters; Deploy button → progress → "Live" endpoint card | QuickML 30s | Benched |
-| Raw record cards routed on a right-angle bus into a prediction dashboard (risk meters, KPI counters) | QuickML 30s | Benched |
+| Code editor whose lines collapse into skeleton bars that dock as drag-and-drop canvas blocks (signature, shared element) | QuickML 30s | Available |
+| Classified scatter plot (dots tint teal / coral after a light regression line draws) beside giant product type | QuickML 30s | Available |
+| Self-cleaning dataset table: null cells fill, a light band normalizes a column, then the table shrinks into the first pipeline node | QuickML 30s | Available |
+| Pipeline node row with ports, a pulse lighting each node's rim in turn; last node morphs into the training card | QuickML 30s | Available |
+| Training card: epoch counter + gradient accuracy curve + dashed loss, metric meters; Deploy button → progress → "Live" endpoint card | QuickML 30s | Available |
+| Raw record cards routed on a right-angle bus into a prediction dashboard (risk meters, KPI counters) | QuickML 30s | Available |
 | Memo card typing To/Subject with an attachment chip that morphs into a container image card and docks into an AppSail instance card (signature, shared element) | AppSail Enterprise 30s | Benched |
 | Iso rack server units with front LED load meters; row scales 1 → 4 off a load-balancer bus whose brightness follows traffic | AppSail Enterprise 30s | Benched |
 | Plan-view ops week track: hatched patch windows and ember alert pins fade off, one gradient uptime line draws Mon → Sun | AppSail Enterprise 30s | Benched |
 | P.S. usage card: GB-minute counter + per-minute histogram lit left → right in the accent gradient | AppSail Enterprise 30s | Benched |
 | Card rim states: comet looping the border while working → static gradient rim when done (every card) | AppSail Enterprise 30s | Benched |
+| Server and browser joined by a kept-open WebSocket tube; the page changes the moment a push lands (hook) | Data Streams overview | Benched |
+| Phones around a server voting; one push updates a separate results app | Data Streams overview | Benched |
+| Audience cards (an icon and a name, nothing else) | Data Streams overview | Benched |
+| Screen recording in a rounded window with a thin gradient border, blur-and-rise entrance | Data Streams overview | Benched |
+| Flat diagram that builds in the order a person needs it, no headings (channel, publisher, subscribers, token pair, ack) | Data Streams overview | Benched |
+| Uses grid: six line-icon tiles, the spoken one brightens (gradient icon), all six light on the payoff | Data Streams overview | Benched |
+| Code walkthrough: the editor recording held on key frames, spoken line outlined, rest dimmed, sped-up eased scroll between | Data Streams overview | Benched |
+| Agent build as a fast-forwarded screen recording that holds on each result worth seeing | Data Streams overview | Benched |
+| Live architecture map running one real request word by word with the closing VO (end card) | Data Streams overview | Benched |
 
 ## Entries (last 3 films; older ones in `ledger-archive.md`)
 ### Stratus corporate 30s (`outputs/stratus corporate/`)
@@ -242,3 +251,13 @@ Last 2 films: **QuickML 30s, AppSail Enterprise 30s**.
 - **Layouts:** L3 centre stage → L10/L1-ish card + headline left → L9 annotated world (type bottom-right) → L4 type as stage over a plan track → L3 P.S. card → end lockup. Transitions: shared-element morph (chip → image card → slot), instance card shrinks into server 1, slide, push-out fade.
 - **Signature:** the memo's .jar attachment becomes an OCI image card and docks into the AppSail instance.
 - **Audio:** D# minor, 100 BPM; −14.02 LUFS · −1.51 dBTP.
+
+### Data Streams overview (`outputs/datastreams/`)
+- **Format:** long-form YouTube feature overview, 4:50 (the first one). Recorded voice-over, real screen recordings, motion graphics between them. The team liked it; it is the model for feature explainers (`catalyst-film/story/arcs.md` §F).
+- **Arc:** promise (live updates, instantly) → two apps we'll build → who it's for → create a channel + access control (console recording) → how it works (flat diagram) → what else it's for (uses grid) → build app 1 by hand (code walkthrough → live demo) → build app 2 with an AI agent (setup → fast-forwarded build → live poll) → one project behind both (architecture map) → two ways to try it. Views: flat 2D throughout (iso 0).
+- **UI:** a server and one browser window joined by a WebSocket tube; voting phones around the server; two audience cards; the console recording in a rounded gradient-border window; a flat flow diagram (channel, publisher via SDK / REST API / Signals, subscribers, token server, token pair, acknowledgements, in-order delivery); a six-tile uses grid with line icons; a VS Code walkthrough with the spoken line outlined; side-by-side live demos (scorer + two fans; presenter + two phones); Claude Code + Catalyst plugin + MCP, fast-forwarded with holds.
+- **Type 1:** none as hero. The end card is a flat architecture map (Slate → Functions → Data Store, Data Streams pushing back to clients) that runs one vote.
+- **Layouts:** animated scenes and full-frame recordings alternate. Transitions: fades through the shared black stage; recordings blur-and-rise in.
+- **Signature:** the hook: one push from the server changes the page the instant it lands, then three phones vote at once and one push updates everyone.
+- **Revisions (user feedback):** the uses grid first had descriptions and mini apps ("too much"), then icon chips ("too much borders"), then gradient glow borders ("still distracting"); the final tiles are plain and the named one brightens. The thumbnail took six versions: `catalyst-film/production/thumbnail.md`.
+- **Audio:** recorded VO, no music bed; two-pass loudnorm to −14 LUFS. Rendered in 4K.

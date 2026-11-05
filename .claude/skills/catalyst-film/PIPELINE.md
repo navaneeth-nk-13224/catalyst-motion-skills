@@ -17,6 +17,8 @@ choice needs detail.
 
 **Lessons from every film so far:** [LEARNINGS.md](LEARNINGS.md). Skim it before stage 4 and stage 8.
 
+**Long-form feature overviews** (3–6 min, recorded VO, screen recordings; arc F in `story/arcs.md`, first made for Data Streams): stages 1–3, 6–8b and 10–11 still apply. Stages 4–5 change: the user records the VO from the approved script, one file per paragraph, and scenes are timed to those files. See `LEARNINGS.md` §Long-form.
+
 ## 0 · One-time setup (per machine)
 ```sh
 sh .claude/skills/catalyst-film/bin/setup.sh      # persistent venv ~/.catalyst-film/venv (Kokoro + numpy), checks ffmpeg/node/espeak
@@ -36,6 +38,7 @@ sh .claude/skills/catalyst-film/bin/setup.sh      # persistent venv ~/.catalyst-
 | 8b | **Key stills** (after stage 8 Build, before stage 9) | — | Render 7–8 stills of the most important moments: `./film keystills <frames>` (writes `outputs/<film>/preview/`; `./film stills` self-review stills go to `build/review/stills/`). Open them, wait. | **The user approves the stills.** No sound, mix or final render before that. | `outputs/<film>/preview/` |
 | 9 | **Sound** | `production/audio.md` §2–3 | Write `audio-src/make_sound.py` (score + SFX only; instruments come from `synth.py`) using `CUE()` / `WORD()`. Run `./film sound`, then `mix`. | Music follows the arc's music line. Breath-cut silence is real silence. | `outputs/<film>/build/audio/mix*.wav` |
 | 10 | **Render + verify** | `production/verify.md` | `./film render`, then `verify`. | `verify` ALL PASS (spec, duration, −14 ±0.5 LUFS, TP ≤ −1 dB, words, **single deliverable**, no captions) | **`outputs/<film>/<slug>.mp4` only** |
+| 10b | **Thumbnail** (YouTube films) | `production/thumbnail.md` | Agree name, line, tag and hero in chat, then build the `Thumbnail` still and export at 2×: `npx remotion still Thumbnail ../<slug>-thumbnail-2x.png --image-format=png --scale=2` | The user approves the content before any design, then the design | `outputs/<film>/<slug>-thumbnail-2x.png` |
 | 11 | **Log + report** | — | Fill `video/ledger.md` (motion rows + entry, copy rows + entry: openings, endings, mode, device, phrases) and run `./film log`: it appends both ledgers, rolls "Last 2 films" and moves the dropped film's Benched rows to Available. Fill brief §5–6. Open the MP4. | `verify` shows ✓ ledger_entry | Ledgers, final message |
 
 **Shortcut:** once the key stills are approved and the sound is written, `./film all` runs check → vo → sound → mix → stills → render → verify. Unchanged stages are skipped from cache. Use `--force` only when the user asks for a rebuild.
@@ -67,9 +70,10 @@ sh .claude/skills/catalyst-film/bin/setup.sh      # persistent venv ~/.catalyst-
   catalyst-film/
     PIPELINE.md (this) · LEARNINGS.md · SKILL.md
     story/                     arcs · story-and-script · storyboard-template · brief-template
-    production/                audio · verify · scaffold
+    production/                audio · verify · scaffold · thumbnail (+ examples/)
     bin/                       setup.sh · new-film.sh · requirements.txt
     template/                  Remotion project: timeline.json · cues.json/ts · Stage · iso/motion/theme kit
+                               Thumbnail.tsx (YouTube still)
                                scripts/ film.py · timeline_tools.py · stills.mjs · render.mjs · verify.py
                                audio-src/ kokoro_vo.py · synth.py (library) · make_sound.py (score) · mix.py
                                KIT.md (kit API) · src/kit.tsx (supporting helpers)

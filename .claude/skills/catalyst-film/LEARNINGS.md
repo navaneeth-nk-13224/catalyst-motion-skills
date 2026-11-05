@@ -1,6 +1,6 @@
 # Learnings — every lesson from the films so far, as checks
 
-Each line was learned the hard way on a real film: Catalyst v1/v2, Slate 10s, CloudScale 1 and 2, Slate 30s and AppSail.
+Each line was learned the hard way on a real film: Catalyst v1/v2, Slate 10s, CloudScale 1 and 2, Slate 30s, AppSail, the Stratus films and Data Streams.
 Add to this file whenever a film teaches something new.
 
 ## Direction (user feedback — these override defaults)
@@ -18,6 +18,10 @@ Add to this file whenever a film teaches something new.
 - **Clean clear space, always.** Text must never touch or overlap art and must keep generous whitespace: ≥ 56px from any solid's real outline (side faces included), cables and cards; ≥ 40px between text blocks. v2's panel labels were measured from the front face, so the side face swallowed the gap; tool chips sat on cables. Measure from the projected outline, or move the label into the card it describes. *(Progressive MCP v2, user)*
 - **Dress the cards.** Bare rounded boxes with a label and a muted line read as wireframes. Every meaningful card gets ≥ 2 structure details (icon header, divider, port, skeleton bars, dot grid) and one light treatment by state (idle border · working comet looping the border · done gradient rim). See `catalyst-motion/dna/visual-aesthetics.md` §5. *(Functions Run 35s, user)*
 - **The voice must sound human.** Kokoro `af_heart` replaced the macOS voices. *(v2)*
+- **Fewer boxes.** No chip boxes behind icons, no gradient or glow borders on tiles. Show focus by brightening the item itself (gradient icon, white name), not by framing it. *(Data Streams uses grid)*
+- **Sell it like the feature owner.** Plain, standard product copy: the name, what it does, one clear line. No AI-sounding slogans, no clickbait, nothing that looks like "prompting Claude Code". *(Data Streams thumbnail)*
+- **Talk through the content before editing a design.** When a round of design changes is rejected, stop and agree the words and elements in chat first, then build once. *(Data Streams thumbnail)*
+- **Release timing can be internal.** No "New" / "Introducing" in anything shareable unless the user says the date is public. *(Data Streams)*
 
 ## Script and voice
 - The script check's *estimates* run ~25% long. A ✗ on an estimate can pass once measured. If the **measured** duration still fails, cut words. Raise the speed only as far as 1.1×. *(Slate 30s)*
@@ -43,6 +47,25 @@ Add to this file whenever a film teaches something new.
 - Blur only as a **static** focus pull at the cut (L14). Never animate blur. *(AppSail)*
 - Camera pans in tracking shots: ≤ 120px/s peak (sine in-out), with a shorter range if the scale grows. *(CloudScale 2)*
 - Paths with spaces break Node `new URL().pathname` (it gives `%20`). Use `fileURLToPath`. *(pipeline)*
+
+## Long-form feature overview (arc F)
+- **Recorded VO, one file per paragraph.** Place each file in its own `<Sequence>` so two parts can never play over each other, and time each scene to its own file's words. *(Data Streams)*
+- **Shared stage.** A solid black base, the faint brand grid and the corner mark sit in Root; scenes keep transparent backgrounds, so a fade goes to black, never to transparent. *(Data Streams)*
+- **Screen recordings:** rounded window, thin gradient border, blur-and-rise entrance while the clip is already playing (never an empty frame). Hold still on each screen a viewer may want to read; fast-forward the waiting. Zoom terminal shots until the text reads. *(Data Streams)*
+- **Blur personal details** in recordings: account names on sign-in pages, emails in lists. *(Data Streams)*
+- **Code walkthroughs:** hold the editor recording on the frame that matters, outline the line being spoken, dim the rest; play the recording's own scroll sped up and eased between holds. Keep overlay coordinates in the recording's pixels. *(Data Streams)*
+- **Pre-render heavy footage** (agent recordings with zooms and holds) as its own composition at `--scale=2`, so the film stays sharp in 4K. Keep those footage compositions registered while the film is still changing. *(Data Streams)*
+- **4K renders are long** (~30 min for 4:50). Render in chunks, join, then mux the two-pass loudnorm mix (−14 LUFS). Only when the user asks. *(Data Streams)*
+- **Check the words, not just the picture.** Transcribe the final render (faster-whisper `small`) and read it: it caught "results moves" in the recorded VO. Check every claim against the docs and the feature owner before recording. *(Data Streams)*
+- **Design previews are separate compositions** (`<Scene>Preview`), merged into the film once approved, then deleted so Studio lists only the film, the thumbnail and any live preview. *(Data Streams)*
+
+## Thumbnail (every film that goes to YouTube)
+See `production/thumbnail.md`. In short: the channel layout (logo top left, tag top right, big two-tone name), dark theme, the product's real flow as the hero, export at 2× (2560×1440), nothing smaller than ~16px at 1280 wide. *(Data Streams)*
+
+## Editing in the Studio (Remotion ≥ 4.0.475)
+- **Studio can drag, scale and re-time elements** written as `Interactive.Div` / `Interactive.Svg` (from `remotion`) with a `name`. Edits save back into the source (it writes `translate`, `scale`, keyframes). *(Data Streams)*
+- **Only literal values are editable.** Inline style object literals, numbers instead of constants, `interpolate(frame, [hard-coded frames], [hard-coded outputs], …)` written inline. Spreads, constants, `frame * k` or `.map()` lists are greyed out or edited as one item. *(Data Streams)*
+- **So make an editable copy, not the film scene.** Rewrite one scene as a separate `<Scene>-Editable` composition with one JSX node per piece; the real scenes compute positions and stay code-edited. *(Data Streams `UseCasesGrid-Editable`)*
 
 ## Stills checklist (stage 8, on `outputs/<film>/preview/sheet.png`)
 - [ ] No wrapped or clipped headline; no label colliding with art or copy
