@@ -4,7 +4,7 @@ The script-freshness gate (`script-freshness.md`) reads this file. Append one en
 - **Benched:** used in either of the last 2 films. It can't be the opening, the closing or the hero line.
 - **Retired:** used in 3 or more films. Not used at all until 3 films pass without it.
 
-Last 2 films: **AppSail Enterprise 30s, Data Streams overview**.
+Last 2 films: **Data Streams overview, AppSail agents overview**.
 
 ## Status
 | Pattern | Films | Status |
@@ -13,7 +13,7 @@ Last 2 films: **AppSail Enterprise 30s, Data Streams overview**.
 | "Pay for what you ship / store. Nothing else." | CloudScale 1, CloudScale 2, Slate 30s, Stratus manifesto | **Retired** (word-for-word tagline used 4×) |
 | Spoken "Catalyst ___." as the final line | all 8 films | **Retired** as the default ending; the name can be on screen only |
 | "Ask your agent / your coding agent …" | CloudScale 2, Slate 30s, AppSail, Stratus manifesto, Stratus corporate, Stratus One file | **Retired** for promos. A walkthrough that actually shows the agent working may say what it does (Data Streams overview: "this time with an AI agent"). |
-| Q→A pairs ("Traffic spikes? …", "Still on another platform? …") | CloudScale 2, Slate 30s, AppSail | **Retired** |
+| Q→A pairs ("Traffic spikes? …", "Still on another platform? …") | CloudScale 2, Slate 30s, AppSail | **Retired** for promos. A long-form walkthrough may ask one real question it then shows ("And what happens if you accidentally refresh the page…? No problem." — AppSail agents overview). |
 | Spoken name lists (agents, frameworks, components, standards) | CloudScale 1, CloudScale 2, Slate 30s, Stratus manifesto | **Retired** for promos; show lists on screen. In a long-form overview a list is fine when each name lights up on screen as it is said (Data Streams overview uses grid). |
 | "agent-ready" / "built for the agent era" | Slate 10s, CloudScale 1, CloudScale 2, Slate 30s | **Retired** as spoken copy |
 | "for you and your agents" / "teams and AI agents alike" | CloudScale 1, CloudScale 2, Stratus corporate | **Retired** |
@@ -56,14 +56,20 @@ Last 2 films: **AppSail Enterprise 30s, Data Streams overview**.
 | Narrator (user script) opening on a question "What if building machine learning models didn't require writing a single line of code?" | QuickML 30s | Available |
 | "Meet Catalyst QuickML. Your no-code machine learning platform." · "Just machine learning, made simple." + spoken "Catalyst QuickML." close | QuickML 30s | Available |
 | Verb triplets "Import / clean and transform / build" · "Train, evaluate, and deploy" | QuickML 30s | Available |
-| Letter / memo voice mode: salutation opening "To the platform team. Subject: the Spring app from 2014." | AppSail Enterprise 30s | Benched |
-| P.S. ending "P.S. It bills by usage, down to the minute." (brand on screen only) | AppSail Enterprise 30s | Benched |
-| "Good news. AppSail takes it whole" · "No servers to patch. No pager at three a.m. Fully managed." | AppSail Enterprise 30s | Benched |
-| On-screen tagline "Run the enterprise on AppSail." | AppSail Enterprise 30s | Benched |
+| Letter / memo voice mode: salutation opening "To the platform team. Subject: the Spring app from 2014." | AppSail Enterprise 30s | Available |
+| P.S. ending "P.S. It bills by usage, down to the minute." (brand on screen only) | AppSail Enterprise 30s | Available |
+| "Good news. AppSail takes it whole" · "No servers to patch. No pager at three a.m. Fully managed." | AppSail Enterprise 30s | Available |
+| On-screen tagline "Run the enterprise on AppSail." | AppSail Enterprise 30s | Available |
 | "Product lets your app do X, instantly." plain definition opener | Data Streams overview | Benched |
 | "Think of …" analogy for the mechanism ("A channel works like a radio station") | Data Streams overview | Benched |
 | Tutorial signposting ("In this video, we'll build both." · "Let's dive right in." · "Now, let's see it running.") | Data Streams overview | Benched for promos; normal in long-form walkthroughs |
 | "Two ways to try it" ending (docs linked below · install the plugin in your AI agent) | Data Streams overview | Benched |
+| "___ is where you run your own ___ on Catalyst." plain definition opener | AppSail agents overview | Benched |
+| "Bring your application as it is" promise, called back in the closing "That's AppSail. Bring your application as it is and AppSail runs it on managed instances." | AppSail agents overview | Benched |
+| Sister-product contrast line ("Functions are useful for … AppSail is designed for …") | AppSail agents overview | Benched |
+| One real app as the worked example ("Let's take this research agent as an example.") built and shown end to end | AppSail agents overview | Benched |
+| Explainer pointer aside ("If you're new to Data Streams, we've got a separate video… link in the description.") | AppSail agents overview | Benched |
+| Console tour narrated tab by tab ("Overview gives you …", "Under Deployments, you can …", "And finally, Logs …") | AppSail agents overview | Benched |
 
 ## Entries (last 3 films; older ones in `copy-ledger-archive.md`)
 ### Stratus corporate
@@ -164,3 +170,11 @@ Last 2 films: **AppSail Enterprise 30s, Data Streams overview**.
 - **Device:** two concrete apps promised up front (live score, live poll) and both built on screen; one analogy for the mechanism (radio station). About 75 lines over 4:50.
 - **Phrases:** "Whether you write the code yourself or build with AI agents" · "a pass that lets it join the channel" · "everyone still gets every update, in order" · "Publish once and every subscriber gets the update." · "No refresh, no polling." · "Live updates for every user, in just a few lines of code."
 - **Slip to avoid:** the recording said "results moves"; transcribe the final mix and read it for grammar before rendering.
+
+### AppSail agents overview (`outputs/appsail-agents/`)
+- **Mode:** narrator, the user's recorded voice (not Kokoro), teaching tone; re-recorded lines spliced in after the AppSail team's review.
+- **Opening:** "AppSail is where you run your own web services on Catalyst." (plain definition).
+- **Ending:** "That's AppSail. Bring your application as it is and AppSail runs it on managed instances." (callback to the intro promise).
+- **Device:** one real app as the example (a research agent) → how it's built (AppSail web app, Job Function, Data Store, Data Streams) → a refresh question → scheduled runs → console tour tab by tab. About 45 lines over 4:30.
+- **Phrases:** "Bring your application as it is" · "AppSail takes care of running it." · "complete, independent web services with your own frameworks, routes, and dependencies" · "without keeping the original HTTP request open" · "So the next time you open the page, the research is already done." · "When there's no traffic, AppSail can scale down to zero".
+- **Product truth:** "the agent keeps running on AppSail after the response" was rejected by the AppSail team; the agent runs in a Job Function. Check every architecture claim with the product team before recording.

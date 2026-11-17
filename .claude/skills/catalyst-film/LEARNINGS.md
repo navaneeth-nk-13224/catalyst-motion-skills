@@ -1,6 +1,7 @@
 # Learnings — every lesson from the films so far, as checks
 
-Each line was learned the hard way on a real film: Catalyst v1/v2, Slate 10s, CloudScale 1 and 2, Slate 30s, AppSail, the Stratus films and Data Streams.
+Each line was learned the hard way on a real film: Catalyst v1/v2, Slate 10s, CloudScale 1 and 2, Slate 30s, AppSail, the Stratus films, Data Streams and the AppSail agents overview.
+How the user reviews and finishes a film (previews, scope, options, renders, product truth): `WORKING-RULES.md`.
 Add to this file whenever a film teaches something new.
 
 ## Direction (user feedback — these override defaults)
@@ -21,6 +22,8 @@ Add to this file whenever a film teaches something new.
 - **Fewer boxes.** No chip boxes behind icons, no gradient or glow borders on tiles. Show focus by brightening the item itself (gradient icon, white name), not by framing it. *(Data Streams uses grid)*
 - **Sell it like the feature owner.** Plain, standard product copy: the name, what it does, one clear line. No AI-sounding slogans, no clickbait, nothing that looks like "prompting Claude Code". *(Data Streams thumbnail)*
 - **Talk through the content before editing a design.** When a round of design changes is rejected, stop and agree the words and elements in chat first, then build once. *(Data Streams thumbnail)*
+- **Follow the review loop in `WORKING-RULES.md`.** Every change a preview first, options named and side by side, touch only what was asked, delete only what was named, one Studio tab, verify a render before replacing the old file. *(AppSail agents overview)*
+- **Product truth beats a neat story.** The AppSail team rejected "the agent keeps running on AppSail after the response" (instances aren't guaranteed after a request ends). The app moved the agent into a Job Function and the film was re-recorded and rebuilt. Claims must be stated by the team or the docs, and tested for real. *(AppSail agents overview)*
 - **Release timing can be internal.** No "New" / "Introducing" in anything shareable unless the user says the date is public. *(Data Streams)*
 
 ## Script and voice
@@ -59,8 +62,18 @@ Add to this file whenever a film teaches something new.
 - **Check the words, not just the picture.** Transcribe the final render (faster-whisper `small`) and read it: it caught "results moves" in the recorded VO. Check every claim against the docs and the feature owner before recording. *(Data Streams)*
 - **Design previews are separate compositions** (`<Scene>Preview`), merged into the film once approved, then deleted so Studio lists only the film, the thumbnail and any live preview. *(Data Streams)*
 
+## Long-form: AppSail agents overview
+- **Re-record, then splice.** Changed lines were re-recorded and spliced into the existing take at the quietest 20 ms of each gap (10 ms fades); a moved sentence is three cuts and a swap, with the visuals for the skipped span held and the moved span re-timed (one time-remap function, so nothing else moves). Verify every splice by transcript. *(AppSail agents overview)*
+- **Real test for "what if it goes down?"** Deploying a build that exits on start took the AppSail service down mid-run (503 throughout); the Job Function still finished and every step reached a Data Streams listener. Answer architecture questions with such a test. *(AppSail agents overview)*
+- **Dummy data instead of blur.** Emails in console recordings are painted over with "developer@example.com" in Inter 28 px (the console font, verified by overlaying the real string), in the text colour measured in a rendered still (the render shifts colours: rgb(22,30,50), not the raw rgb(20,26,40)), on each row's background, with feathered edges. *(AppSail agents overview)*
+- **Patch a recording with a real screenshot** taken at the same pixel scale (a panel showing 1 live instance, 12 usages), whites matched to the recording, and cross-fade back to the recorded state when the voice turns to it ("can scale down to zero"). *(AppSail agents overview)*
+- **`offset-path` already centres the element.** Dots moved along a wire with extra negative margins sit 4–6 px off the line. *(AppSail agents overview)*
+- **Fan-out to a row of tiles:** route the wires along one shared bus with rounded drops into each tile; separate curves to a row cross each other. *(AppSail agents overview)*
+- **Studio `AbortError: signal is aborted without reason`** on zoom = several Studio tabs on the same port (each refetches `/api/app-info` on the others' `storage` events). Keep one tab; name compositions instead of opening them. *(AppSail agents overview)*
+- **Negative `<Sequence from>` previews desync `OffthreadVideo`** and per-frame overlays; previews start at frame 0. *(AppSail agents overview)*
+
 ## Thumbnail (every film that goes to YouTube)
-See `production/thumbnail.md`. In short: the channel layout (logo top left, tag top right, big two-tone name), dark theme, the product's real flow as the hero, export at 2× (2560×1440), nothing smaller than ~16px at 1280 wide. *(Data Streams)*
+See `production/thumbnail.md`. In short: the channel layout (logo top left, tag top right, big name), dark theme, one focal hero object showing the product's real behaviour, a 3–5 word line in the docs' terms, the bottom-right corner empty, tested at 320 and 168 px and in greyscale, export at 2× (2560×1440), nothing smaller than ~16px at 1280 wide. *(Data Streams, AppSail agents overview)*
 
 ## Editing in the Studio (Remotion ≥ 4.0.475)
 - **Studio can drag, scale and re-time elements** written as `Interactive.Div` / `Interactive.Svg` (from `remotion`) with a `name`. Edits save back into the source (it writes `translate`, `scale`, keyframes). *(Data Streams)*

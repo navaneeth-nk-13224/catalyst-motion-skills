@@ -59,6 +59,11 @@ A pasted VO script, a timed shot list / storyboard, or both, counts as "given". 
 - The fresh-session rule still applies. Deliver the `.mp4` path at the end without stopping in between.
 
 ## Rules that always apply
+- **Follow the review loop (`catalyst-film/WORKING-RULES.md`).** Every visible change is a preview composition first;
+  options are 2–4, named, side by side, with a pick; change only what the user named and delete only what they named;
+  one Studio tab; claims must be stated by the product team or the docs and tested; renders only when asked and
+  verified before they replace the old file. It also holds the narration, voice, design, recording, music and
+  thumbnail rules and the hard limits learned from the long-form films.
 - **Keep token use lean without touching quality.** One film per session (suggest a fresh session if this one is long).
   Every call re-reads the whole context, so cost ≈ calls × context: batch independent commands into one call, don't retry blindly.
   `start.sh` prints the digest's reading list in one call — never the kit sources, old films' code or `synth.py`.

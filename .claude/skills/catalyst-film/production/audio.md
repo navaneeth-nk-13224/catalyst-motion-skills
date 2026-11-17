@@ -1,6 +1,6 @@
 # Audio: voice-over, score, SFX, mix
 
-All audio is generated locally and is original. No stock music and no cloud TTS.
+All audio is generated locally and is original. No stock music and no cloud TTS. Exception: a track or a voice the user supplies (a recorded voice-over, a YouTube Audio Library track they downloaded).
 
 ## 1. Voice-over — Kokoro-82M (Apache-2.0, github.com/hexgrad/kokoro)
 - **Voice:** `af_heart` at 1.05×. The user chose it over macOS voices for sounding natural.
@@ -58,3 +58,13 @@ python audio-src/mix.py src/timeline.json
 - **Outputs:**
   - `outputs/<film>/build/audio/voiceover.wav`
   - `outputs/<film>/build/audio/mix.wav`
+
+## 5. Music for a long-form film with a recorded voice (AppSail agents overview)
+- **A pad-only bed fails.** The first score (pads and a quiet arpeggio) was "just humming that fills the silence".
+  A score needs **rhythm, a bass line and a short recognisable hook**.
+- **Audition first:** 3 options of ~30 s in clearly different styles (e.g. pulse electronic, lo-fi half-time,
+  cinematic arpeggio), each mixed under the film's real opening voice, as separate preview compositions. Score the
+  full film only after the user picks one, following the film's parts (calmer intro, fuller build, resolve on the close).
+- **Duck under the recorded voice:** take the voice from the final render, a 20 ms RMS envelope gates a gain curve
+  (20 ms attack, 350 ms release); music ~11–12 dB under the voice in gaps, a further 7–8 dB down while speaking.
+- If no option fits, offer the **YouTube Audio Library** (no Content ID claims on YouTube); the user downloads the track.
