@@ -2,7 +2,7 @@
 
 Append one entry per finished film; newest at the bottom. The freshness gate (`create/freshness.md`) reads this.
 **Benched** = used in either of the last 2 films. **Retired** = used in 3+ films (no hero use until 3 films pass without it).
-Last 2 films: **AppSail Enterprise 30s, Data Streams overview**.
+Last 2 films: **Data Streams overview, AppSail agents overview**.
 
 ## Status (update after each film)
 | Motif | Films | Status |
@@ -112,20 +112,27 @@ Last 2 films: **AppSail Enterprise 30s, Data Streams overview**.
 | Pipeline node row with ports, a pulse lighting each node's rim in turn; last node morphs into the training card | QuickML 30s | Available |
 | Training card: epoch counter + gradient accuracy curve + dashed loss, metric meters; Deploy button → progress → "Live" endpoint card | QuickML 30s | Available |
 | Raw record cards routed on a right-angle bus into a prediction dashboard (risk meters, KPI counters) | QuickML 30s | Available |
-| Memo card typing To/Subject with an attachment chip that morphs into a container image card and docks into an AppSail instance card (signature, shared element) | AppSail Enterprise 30s | Benched |
-| Iso rack server units with front LED load meters; row scales 1 → 4 off a load-balancer bus whose brightness follows traffic | AppSail Enterprise 30s | Benched |
-| Plan-view ops week track: hatched patch windows and ember alert pins fade off, one gradient uptime line draws Mon → Sun | AppSail Enterprise 30s | Benched |
-| P.S. usage card: GB-minute counter + per-minute histogram lit left → right in the accent gradient | AppSail Enterprise 30s | Benched |
-| Card rim states: comet looping the border while working → static gradient rim when done (every card) | AppSail Enterprise 30s | Benched |
+| Memo card typing To/Subject with an attachment chip that morphs into a container image card and docks into an AppSail instance card (signature, shared element) | AppSail Enterprise 30s | Available |
+| Iso rack server units with front LED load meters; row scales 1 → 4 off a load-balancer bus whose brightness follows traffic | AppSail Enterprise 30s | Available |
+| Plan-view ops week track: hatched patch windows and ember alert pins fade off, one gradient uptime line draws Mon → Sun | AppSail Enterprise 30s | Available |
+| P.S. usage card: GB-minute counter + per-minute histogram lit left → right in the accent gradient | AppSail Enterprise 30s | Available |
+| Card rim states: comet looping the border while working → static gradient rim when done (every card) | AppSail Enterprise 30s | Available |
 | Server and browser joined by a kept-open WebSocket tube; the page changes the moment a push lands (hook) | Data Streams overview | Benched |
 | Phones around a server voting; one push updates a separate results app | Data Streams overview | Benched |
 | Audience cards (an icon and a name, nothing else) | Data Streams overview | Benched |
-| Screen recording in a rounded window with a thin gradient border, blur-and-rise entrance | Data Streams overview | Benched |
-| Flat diagram that builds in the order a person needs it, no headings (channel, publisher, subscribers, token pair, ack) | Data Streams overview | Benched |
+| Screen recording in a rounded window with a thin gradient border, blur-and-rise entrance | Data Streams overview, AppSail agents overview | Benched |
+| Flat diagram that builds in the order a person needs it, no headings (channel, publisher, subscribers, token pair, ack) | Data Streams overview, AppSail agents overview | Benched |
 | Uses grid: six line-icon tiles, the spoken one brightens (gradient icon), all six light on the payoff | Data Streams overview | Benched |
 | Code walkthrough: the editor recording held on key frames, spoken line outlined, rest dimmed, sped-up eased scroll between | Data Streams overview | Benched |
 | Agent build as a fast-forwarded screen recording that holds on each result worth seeing | Data Streams overview | Benched |
 | Live architecture map running one real request word by word with the closing VO (end card) | Data Streams overview | Benched |
+| App deck: App 1 in front, App 2/3 half-hidden behind it; framework pills light up by runtime and gather into the app | AppSail agents overview | Benched |
+| Instance tiles (product mark + live dot) fed by one shared bus line with request pulses; a ring pulses on each arrival (intro + closing) | AppSail agents overview | Benched |
+| Agent steps column (question → model decides → tools branch → briefing with citations) beside the real page recording | AppSail agents overview | Benched |
+| Walkthrough diagram with live code cards (app.js, index.js) and a numbered ticket per step flowing Store → Channel → Page | AppSail agents overview | Benched |
+| "Watch first" corner card with the related video's real YouTube thumbnail | AppSail agents overview | Benched |
+| Console tour: left tab rail (current tab large, in the gradient) + bracket spotlight on the named panel, the window steps aside per tab | AppSail agents overview | Benched |
+| Live chart reveal: the recorded chart's real points draw left → right with glowing leading points (like a live market line) | AppSail agents overview | Benched |
 
 ## Entries (last 3 films; older ones in `ledger-archive.md`)
 ### Stratus corporate 30s (`outputs/stratus corporate/`)
@@ -261,3 +268,12 @@ Last 2 films: **AppSail Enterprise 30s, Data Streams overview**.
 - **Signature:** the hook: one push from the server changes the page the instant it lands, then three phones vote at once and one push updates everyone.
 - **Revisions (user feedback):** the uses grid first had descriptions and mini apps ("too much"), then icon chips ("too much borders"), then gradient glow borders ("still distracting"); the final tiles are plain and the named one brightens. The thumbnail took six versions: `catalyst-film/production/thumbnail.md`.
 - **Audio:** recorded VO, no music bed; two-pass loudnorm to −14 LUFS. Rendered in 4K.
+
+### AppSail agents overview (`outputs/appsail-agents/`)
+- **Format:** long-form YouTube feature overview, 4:30, 4K. Recorded voice-over, real screen recordings (the agent page, the AppSail console), motion graphics between them; the second film in the arc F format.
+- **Arc:** what AppSail is (bring your app as it is → managed instances → Functions vs AppSail) → AI agents as the example → the research agent (steps column + real recording) → how it's built (AppSail web app → Data Store → Job Scheduling → Job Function → Data Store + Data Streams → page) → refresh recovery → scheduled runs (Cron) → console tour (Overview, Instances, History, Deployments, Configuration, Logs) → close on the runtimes flying into AppSail and three instance tiles. Views: flat 2D throughout (iso 0).
+- **UI:** app deck with framework pills; instance tiles on a bus; services cards (Job Scheduling, Data Store, Data Streams); agent steps column; walkthrough diagram with code cards and tickets; "Watch first" card; console window with tab rail, spotlights and a live chart reveal; dummy emails painted over the recordings.
+- **Type 1:** none as hero.
+- **Signature:** the closing: Node, Python, Java and Docker fly into AppSail, AppSail steps aside, and three instance tiles light up on one bus.
+- **Revisions (user feedback):** the architecture changed after the AppSail team's review (Job Function, not background work on AppSail); "running your app" instance cards → tiles; the Data Streams aside moved up to the first mention of Data Streams; the Overview shows 1 live instance, then 0 on "scale down to zero"; emails painted, not blurred. The thumbnail took ~15 rounds: a flowchart hero was "crowded" at every size, the final is one object (stacked instance tiles with load bars), `catalyst-film/production/thumbnail.md`.
+- **Audio:** recorded VO; original music auditioned as three 30s options (pulse, lo-fi, cinematic) after a pad-only bed was rejected. 4K render verified by contact sheet and transcript.

@@ -31,6 +31,10 @@ Code: read **only** `template/KIT.md` — never open the kit sources (`kit.tsx`,
 - **Advanced mode only:** script + storyboard approved, then 7–8 key stills approved, before any sound, mix or final render.
 - **Script given → skip to building.** A pasted VO script and/or timed shot list (not a loose idea) skips stages 1, 3, 7 and 8b: no research, no story, no approvals. VO given → verbatim; no VO lines → write VO to the given timings (freshness gate, `./film check`), no approval. Stage 6 = transcribe: moments → brief §4 + `cues.json`, timestamps = cuts, on-screen text exact; fill only what's left open. Their script beats conflicting house rules (note in brief §6). Still run 0, 2, 5, 8 (`./film layout` ✓ + self-review), 9–11, then deliver the `.mp4` path.
 - **User briefs win** (their words, timestamps, mode). Vary everything else the rules allow.
+- **The review loop (`WORKING-RULES.md`, read it before the first change round):** every visible change is a preview
+  composition first, merged and deleted after approval · 2–4 named options with a pick · touch only what the user
+  named, delete only what they named · one Studio tab, previews start at frame 0 · claims stated by the product team
+  or docs and tested for real · a render only when asked, verified before it replaces the old file.
 
 ## Simple mode run (default)
 0 start → 1 lean research (one fetch, or reuse an earlier brief §1) → table (`simple-script.md`, copy-ledger gate) →
@@ -107,6 +111,7 @@ L6 lower third · L7 no type · L8 diagonal · L9 annotated world · L10 window 
 | Need | File |
 |---|---|
 | Full stage table, automation notes | `PIPELINE.md` |
+| How the user reviews: previews, options, scope, renders, product truth, limits | `WORKING-RULES.md` |
 | Every lesson with its source film | `LEARNINGS.md` |
 | Arc shapes in detail | `story/arcs.md`, `story/story-and-script.md` |
 | Script rules in detail | `story/script-freshness.md` |
